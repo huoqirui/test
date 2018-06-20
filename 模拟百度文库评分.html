@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模拟百度评分</title>
+<style>
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+ul li{
+	display: inline-block;
+	border: 1px solid #000;
+	width: 20px;height: 20px;
+	/*background: url(img/stars.png) no-repeat -40px;*/
+}
+.box span{
+	color:red;
+}
+.box span,.box strong,.box ul{
+	vertical-align: middle;
+}
+.active{
+	/*background: url(img/stars.png) no-repeat;*/
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<span>*</span>
+		<strong>总体评价:</strong>
+		<ul id="star">
+			<li><img src="img/lighing-off.png" alt=""></li>
+			<li><img src="img/lighing-off.png" alt=""></li>
+			<li><img src="img/lighing-off.png" alt=""></li>
+			<li><img src="img/lighing-off.png" alt=""></li>
+			<li><img src="img/lighing-off.png" alt=""></li>
+		</ul>
+	</div>
+</body>
+<script>
+	var oStars = document.getElementById('star');
+	var aLi = oStars.getElementsByTagName('li');
+	var aLilength = aLi.length;
+	var arrStars = ['img/bright-stars.png','img/bright-stars.png','img/bright-stars.png','img/bright-stars.png','img/bright-stars.png']
+	var arrOffstars = ['img/lighing-off.png','img/lighing-off.png','img/lighing-off.png','img/lighing-off.png','img/lighing-off.png']
+	var num=0;
+	for(var i=0;i<aLilength;i++){
+		aLi[i].index=i;
+
+		aLi[i].onmouseover=function(){
+			var oImg=this.getElementsByTagName('img');
+
+			oImg[0].src=arrStars[this.index];
+			
+		}
+		
+		aLi[i].onmouseout=function(){
+			var oImg=this.getElementsByTagName('img');
+
+			oImg[0].src=arrOffstars[this.index];
+		}
+		aLi[i].onclick=function(){
+			var oImg=this.getElementsByTagName('img');
+
+			oImg[0].src=arrStars[this.index];
+		}
+		
+	}
+	// console.log(aLilength);
+</script>
+</html>
