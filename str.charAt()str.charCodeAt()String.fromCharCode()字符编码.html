@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>charAt()charCodeAt()String.fromCharCode()</title>
+<style>
+
+</style>
+</head>
+<body>
+	<input type="text">
+	<button>检测</button>
+</body>
+<script>
+	var str='09azstudy js$_-';
+	//1.charAt()接收基于0的字符位置,返回给定位置的字符,空格也算字符
+	// console.log(str.charAt(5));
+	//2.charCodeAt()接收基于0的字符位置,返回给定位置字符编码
+	// console.log(str.charCodeAt(2));
+	//3.String.fromCharCode()接收字符编码返回字符
+	// console.log(String.fromCharCode(97));
+	//4.0:48 9:57 字符编码集数字0~9
+	// console.log(str.charCodeAt(0));
+	// console.log(str.charCodeAt(1));
+	//5.a:97 z:122字符集 32 $:36 _:95 -:45字母a~z 大写字母A~Z 特殊字符$_-
+	// console.log(str.charCodeAt(2));
+	// console.log(str.charCodeAt(3));
+	// console.log(str.charCodeAt(9));
+	// console.log(str.charCodeAt(12));
+	// console.log(str.charCodeAt(13));
+	// console.log(str.charCodeAt(14));
+	//6.用字符串形式写输入框只允许输入数字的代码,根据字符串编码集来判断是不是纯数字,纯数字是48到57之间的,
+	function detect(str){
+		for(var i=0;i<str.length;i++){
+			var num=str.charCodeAt(i);
+			if(num<48||num>57){
+				return false;
+			}
+			return true;
+		}
+	}
+	var oInp=document.querySelector('input');
+	var oBtn=document.querySelector('button');
+	oBtn.onclick=function(){
+		var val=oInp.value;
+		if(detect(val)){
+			alert('恭喜'+val+'全是数字');
+		}else{
+			alert('输入有误');	
+		}
+	}
+</script>
+</html>
