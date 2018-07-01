@@ -243,9 +243,12 @@ padding:0 8px;margin-top:12px;overflow: hidden;}
 	background: red;
 }
 /*特色产品推荐*/
-.featured{}
+.featured{
+	position: relative;
+	overflow:hidden;
+}
 .featured ul {
-	padding: 26px 60px 20px 60px;
+	padding: 26px 0px 20px 0px;
 	/*border: 1px solid #ccc;*/
 	text-align: justify;
 	background-color: #fff;
@@ -253,12 +256,31 @@ padding:0 8px;margin-top:12px;overflow: hidden;}
 	-webkit-box-shadow: inset 1px 1px 5px 2px #ccc;
 	-moz-box-shadow: inset 1px 1px 5px #ccc;
 	box-shadow: outset 1px 1px 5px #ccc;
+	overflow:hidden;
 }
 .featured ul li{
 	display: inline-block;
 	width: 148px;
+	margin: 0 30px;
 
 }
 .featured p{
 	font-size: 12px;
+}
+/*左侧按钮右侧按钮*/
+.featured .prev,.featured .next{
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background-color: #ccc;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.featured .prev{
+	left:-10px;
+	z-index:2;
+}
+.featured .next{
+	right:-10px;
 }
