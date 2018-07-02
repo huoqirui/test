@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> event</title>
+<style>
+div{
+	padding: 40px;
+}
+#hd{
+	background-color: green;
+}
+#bj{
+	background-color: yellow;
+}
+#china{
+	background-color: red;
+}
+</style>
+</head>
+<body>
+	<!-- <div id="test1"></div> -->
+	<!-- <div id="china">china
+		<div id="bj">bj
+			<div id="hd">hd</div>
+		</div>
+	</div> -->
+	<!-- <form action=""id="fm">
+		<p><input type="text"name="age"></p>
+		<input type="submit" value="submit">
+	</form> -->
+	<p id="text">哈哈</p>
+	<input type="button" value="让你哭" onclick="addCry()">
+	<input type="button" value="让你笑" onclick="addLaugh()">
+	<input type="button" value="你别哭" onclick="removeCry()">
+	<input type="button" value="你别笑" onclick="removeLaugh()">
+</body>
+<script>
+	var oChina=document.getElementById('china');
+	var oBj=document.getElementById('bj');
+	var oHd=document.getElementById('hd');
+	//1.看一眼鼠标的event对象
+	// oTest1.onclick=function(){
+	// 	alert(this.id);
+	// }
+	// oTest2.onclick=function(){
+	// 	this.style.backgroundColor='red';
+	// }
+	// oTest3.onclick=function(){
+	// 	console.log(event);
+	// }
+	//2.addEventListener('',fn,true/false)
+	// oTest1.addEventListener('click',function(){
+	// 	alert('我是div'+'我有多宽'+ getComputedStyle(this).width);
+	// })
+	
+	//4.捕获阶段
+	// oHd.addEventListener('click',function(){alert('hd')},true);
+	// oBj.addEventListener('click',function(ev){
+	// 	alert('bj');
+	// 	ev.stopPropagation();
+	// },true);
+	// oChina.addEventListener('click',function(){alert('china')},true);
+	//3.冒泡阶段
+	// oBj.addEventListener('click',function(){alert('离开bj')},false);
+	// oHd.addEventListener('click',function(){alert('离开hd')},false);
+	// oChina.addEventListener('click',function(){alert('离开china')},false);
+	//5.检查后再决定提交表单
+	// var oFm=document.getElementById('fm');
+	// var aInput=oFm.getElementsByTagName('input');
+	// aInput[0].addEventListener('click',function(ev){
+	// 	if(this.value==''){
+	// 		alert('不能提交')
+	// 		ev.preventDefault();
+	// 	}
+	// },false);
+ 	//移出事件
+ 	// var oP=document.getElementById('text');
+ 	// function cry(){
+ 	// 	alert('哭');
+ 	// }
+ 	// function laugh(){
+ 	// 	alert('笑');
+ 	// }
+ 	// function addCry(){
+ 	// 	oP.addEventListener('click',cry,false);
+ 	// }
+ 	// function addLaugh(){
+ 	// 	oP.addEventListener('click',laugh,false);
+ 	// }
+ 	// function removeCry(){
+ 	// 	oP.removeEventListener('click',cry,false);
+ 	// }
+ 	// function removeLaugh(){
+ 	// 	oP.removeEventListener('click',laugh,false);
+ 	// }
+</script>
+</html>
