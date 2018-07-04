@@ -246,41 +246,89 @@ padding:0 8px;margin-top:12px;overflow: hidden;}
 .featured{
 	position: relative;
 	overflow:hidden;
+	
+	
 }
-.featured ul {
-	padding: 26px 0px 20px 0px;
-	/*border: 1px solid #ccc;*/
-	text-align: justify;
+.feature_wrap{
 	background-color: #fff;
-	box-shadow:1px 1px 1px #ccc;
 	-webkit-box-shadow: inset 1px 1px 5px 2px #ccc;
 	-moz-box-shadow: inset 1px 1px 5px #ccc;
 	box-shadow: outset 1px 1px 5px #ccc;
+}
+.featured ul {
+	padding: 24px 41px 20px 41px;
+	/*background-color: red;*/
+	/*border: 1px solid #ccc;*/
+	text-align: justify;	
 	overflow:hidden;
 }
 .featured ul li{
+	width: 147px;
 	display: inline-block;
-	width: 148px;
-	margin: 0 30px;
-
+	margin: 0px 24px;
+	text-align: center;
+}
+.featured li img{
+	vertical-align: top;
 }
 .featured p{
+
 	font-size: 12px;
 }
 /*左侧按钮右侧按钮*/
 .featured .prev,.featured .next{
 	position: absolute;
-	width: 60px;
-	height: 60px;
-	background-color: #ccc;
+	width: 35px;
+	height: 41px;	
 	top: 0;
 	bottom: 0;
 	margin: auto;
 }
 .featured .prev{
-	left:-10px;
-	z-index:2;
+	background:url(../image/arrow.png) -17px 0;
+	left: 0;
+	
 }
 .featured .next{
-	right:-10px;
+	background:url(../image/arrow.png)  -18px -41px;
+	right:0;
+}
+/*footer*/
+.serve{
+	background-color: black;
+	color: #fff;
+}
+.serve p{
+	display: inline-block;
+	vertical-align: middle;
+}
+.security,.ship{
+	display: inline-block;
+
+}
+.security_logo{
+	display: inline-block;
+	width: 55px;
+	height: 51px;
+	background: url(../image/security.png);
+	vertical-align: middle;
+}
+.ship_box{
+	display: inline-block;
+	width: 55px;
+	height: 36px;
+	background: url(../image/security.png) 0 -51px;
+	vertical-align: middle;
+}
+.contact dl{
+	display: inline-block;
+	margin-right: 70px;
+}
+.contact dl:last-child{
+	margin-right: 0;
+}
+.contact {
+	background-color:#6d0f02;
+	color:#fff;
+	padding: 33px 5px 54px 5px;
 }

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> </title>
+<style>
+#div1{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: absolute;
+}
+#div2{
+	width: 100px;
+	height: 100px;
+	background-color: green;
+	position: absolute;
+	top: 200px;
+	left:200px;
+}
+</style>
+</head>
+<body>
+	<div>文字选中文字拖拽</div>
+	<div id="div1"></div>
+
+	<!-- <div id="div2"></div> -->
+	<!-- <input type="button" value="按钮一">
+	<input type="button" value="按钮二"> -->
+</body>
+<script>
+	//1.拖动放
+	var oDiv=document.getElementById('div1');
+	drag(oDiv);	
+function drag(obj){
+	obj.onmousedown=function(ev){
+		//非标准IE:给移动对象设置全局捕获,这样文字被选中也不会被移动;
+		if(obj.setCapture){
+			obj.setCapture();
+		}
+		var ev=ev||event;
+		var divX=ev.clientX-this.offsetLeft;
+		var divY=ev.clientY-this.offsetTop;
+		document.onmousemove=function(ev){
+			var ev=ev||event;
+			obj.style.left=ev.clientX-divX+'px';
+			obj.style.top=ev.clientY-divY+'px';
+		}
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			//释放全局捕获releaseCapture(),不管拖哪都是在移动元素上,所以要在鼠标抬起后则要释放掉全部捕获
+			if(obj.releaseCapture){
+				obj.releaseCapture();
+			}
+		}
+		    return false;
+	}
+}
+
+	//2.非标准的IE下如何解决默认行为,例子是2个按钮
+		// var aInp=document.getElementsByTagName('input');
+		// if(aInp[0].setCapture){
+		// 	aInp[0].setCapture();
+		// }
+		// aInp[0].onclick=function(){
+		// 	alert(1);
+		// }
+		// aInp[1].onclick=function(){
+		// 	alert(2);
+		// }
+</script>
+</html>
