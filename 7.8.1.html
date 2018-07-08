@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> </title>
+<style>
+
+</style>
+</head>
+<body>
+	
+</body>
+<script>
+/*1.字符串具有属性和方法,调用字符串的属性和方法时,后台自动转成字符串基本包装对象
+	var s = 'hello world!';
+	var word = s.substring(s.indexOf('')+1,s.length);
+	console.log(word);
+*/
+/*2.临时对象,所以t的值是undefined,s.len,字符串属性根本不存在这个属性
+	基本包装对象(基本对象类型)属性是只读的,不能给定义新属性
+	var s = 'test';
+	s.len = 4;
+	var t = s.len;
+	console.log(t);
+*/
+/*3.new + 构造函数创建的对象,必要时转成原始值所以==和===有如下情况
+	var s = 'test',n = 1, b = true;
+	var S = new String(s);
+	var N = new Number(n);
+	var B = new Boolean(b);
+	console.log(s==S);//转换后再比较
+	console.log(n==N);//转换后再比较
+	console.log(b==B);//转换后再比较
+	console.log(s===S);//只比较不转换
+	console.log(n===N);//只比较不转换
+	console.log(b===B);//只比较不转换
+*/
+/*4.字符串是不可变值,调用方法后返回的也仅仅是新的字符串
+	var s = 'hello';
+	s.toUpperCase();
+	console.log(s);
+*/
+/*5.仅仅赋值的是引用,对象本身并没有复制一次
+	var a =[];
+	var b = a;
+	b[0]=1;
+	a[0];
+	console.log(a===b);
+*/
+/*6.得到一个数组的副本,需for循环对象的每一个属性或者数组的每一个元素
+	var a = ['a','b','c'];
+	var b = [];
+	for(var i =0;i<a.length;i++){
+		b[i]=a[i];
+	}
+	console.log(b);
+*/
+/*7.对象.toString()方法
+	console.log({x:1,y:2}.toString());
+	console.log([1,2,3].toString());
+	console.log(function(x){f(x);}.toString());
+	console.log(new Date().toString());
+	console.log(/\d+/g.toString());
+*/
+/*8.函数基本语法
+	function functionName(arg0,arg1,...agrN){
+		statements;
+	}
+	function sayHi(name,message){
+		console.log("Hello "+name+message);
+	}
+	sayHi('Nicholas ','how are you today?');
+*/
+/*9.函数调用return语句,return后跟整个函数调用返回值
+	return之后的语句不执行
+	function sum(num1,num2){
+		return num1+num2;
+		console.log('Hello world');
+	}	
+	var result = sum(5,10);
+	console.log(result);
+*/
+/*10.函数可以有多个return语句;
+	function diff(num1,num2){
+		if(num1<num2){
+			return num2-num1;
+		}
+		else{
+			return num1-num2;
+		}
+	}
+	var result = diff(12,10);
+	console.log(result);
+*/
+/*11.形参不是必须的
+	函数体内有arguments对象类数组可以接收传进来的实参
+	function sayHi(){
+		console.log('Hello '+arguments[0]+arguments[1]);
+	}
+	sayHi('Huo ','how are you');
+*/
+/*12.可以通过arguments.length判断传进来多少个实参;
+	function howManyArgs(){
+		console.log(arguments.length);
+	}
+	howManyArgs(2,3);
+	howManyArgs(3,4,5);
+*/
+/*13.根据arguments的个数执行不同的操作
+	function doAdd(){
+		if(arguments.length==1){
+			console.log(arguments[0]+10);
+		}else if(arguments.length==2){
+			console.log(arguments[0]+arguments[1]);
+		}
+	}
+	doAdd(10);
+	doAdd(5,10);
+*/
+/*14.形参的个数可以跟实参个数不一样
+	形参就是摆设,实际调用时实参可以具体
+	函数具有类似数组的arguments对象;
+	重载:
+		函数名不变,但是根据某些条件不一样,实现不同的结果
+		通过检查传入函数中实参的类型和个数(配合if语句)并作出反应,可以模仿方法的重载
+	agrumengts对象的值永远与对应形参的值保持同步;
+				形参与arguments对象值内存空间独立,值同步
+	形参
+		没有传入值的形参,被赋予undefined,跟定义变量没有初始化一样.
+	function doAdd(num1,num2){
+		if(arguments.length==1){
+			console.log(num1+10);
+		}else if(arguments.length==2){
+			console.log(arguments[0]+num2);
+		}
+	}
+	doAdd(10);
+	doAdd(20,30);
+*/
+/*15.函数是对象
+	 函数名是包含对象的指针变量
+	 一个函数可以有多个名字
+	function sum(num1,num2){
+		return num1+num2;
+	}
+	console.log(sum(10,10));
+	var anotherSum = sum;
+	console.log(anotherSum(10,10));
+	sum = null;
+	console.log(anotherSum(10,10));
+*/
+/*16.没有重载
+	 同名函数则后面覆盖前面
+	 因函数名是包含函数对象的指针
+	 后面同名函数名,覆盖掉了上一个函数名,所以没有重载;
+	function addSomeNuber(num){
+		return mum+100;
+	}
+	function addSomeNumber(num){
+		return num+200;
+	}
+	var result = addSomeNumber(100);
+	console.log(result);
+	var addSomeNumber = function(num){
+		return mum+100;
+	}
+	 addSomeNumber = function(num){
+		return num+200;
+	}
+	var result = addSomeNumber(100);
+	console.log(result);
+*/
+/*17.函数声明,可以提前至顶部
+	console.log(sum(10,10));
+	function sum(num1,num2){
+		return num1+num2;
+	}
+*/
+/*18.函数表达式不会提前,
+	 只有执行到才可以执行
+	console.log(sum(10,10));
+	var sum = function(num1,num2){
+		return num1+num2;
+	};
+*/
+/*19.函数名是指针
+	函数可以作为参数传递;
+	function callSomeFunction(someFunction,someArgument){
+		return someFunction(someArgument);
+	}
+	function add10(num){
+		return num+10;
+	}
+	var result1 = callSomeFunction(add10,10);
+	console.log(result1);
+	function getGreeting(name){
+		return 'Hello, '+name;
+	}
+	var result2 = callSomeFunction(getGreeting,'Nicholas');
+	console.log(result2);
+*/
+/*20.函数可以作为另一个函数的返回值;
+	function createComparisonFunction(propertyName){
+		return function(object1,object2){
+			var result1 = object1[propertyName];
+			var result2 = object2[propertyName];
+			if(result1<result2){
+				return -1;
+			}else if(result1>result2){
+				return 1;
+			}else{
+				return 0;
+			}
+		};
+	}
+	var data = [{name:'Zachary',age:28},{name:'Nicholas',age:29}];
+	data.sort(createComparisonFunction('name'));
+	console.log(data[0].name);
+	data.sort(createComparisonFunction('age'));
+	console.log(data[0].age);
+*/
+/*21.阶乘
+		避免耦合函数名,用函数对象arguments的callee属性
+	arguments.callee是一个指针,指向拥有arguments对象的函数
+	function factorial(num){
+		if(num<=1){
+			return 1;
+		}else{
+			return num*factorial(num-1);
+		}
+	}
+	function factorial(num){
+		if(num<=1){
+			return 1;
+		}else{
+			return num*arguments.callee(num-1);
+		}
+	}
+	factorial(3);
+	console.log(factorial(3));
+	console.log(factorial(4));
+	console.log(factorial(5));
+	var trueFactorial = factorial;
+	factorial = function(){
+		return 0;
+	}
+	console.log(trueFactorial(5));
+	console.log(factorial(5));
+*/
+/*22.this 函数执行的环境对象;
+	函数执行的环境对象
+	window.color = 'red';
+	var o = {color:'blue'};
+	function sayColor(){
+		console.log(this.color);
+	}
+	sayColor();
+	o.sayColor=sayColor;
+	o.sayColor();
+*/
+/*23.caller属性
+			调用函数的函数引用
+	function outer(){
+		inner();
+	}
+	function inner(){
+		console.log(inner.caller)
+	}
+	outer();
+*/
+/*24.函数属性length
+	 	判断形参个数
+	function sayName(name){
+		console.log(name);
+	}
+	function sum(num1,num2){
+		return num1+num2;
+	}
+	function sayHi(){
+		console.log('hi');
+	}
+	console.log(sayName.length);
+	console.log(sum.length);
+	console.log(sayHi.length);
+*/
+/*25.apply()和call()在特定作用域调用函数
+	在callSum1中调用sum()函数
+		apply()第一个参数在其中运行函数的作用域,设置函数体内this对象的值
+		第二个参数数组,也可以是arguments对象
+	function sum(num1,num2){
+		return num1+num2;
+	}
+	function callSum1(num1,num2){
+		return sum.apply(this,arguments);
+	}
+	function callSum2(num1,num2){
+		return sum.apply(this,[num1,num2]);
+	}
+	console.log(callSum1(10,10));
+	console.log(callSum2(10,10));
+*/
+/*26.函数新方法bind()
+					传入的参数作为this值
+	window.color = 'red';
+	var o = {color:'blue'};
+	function sayColor(){
+		console.log(this.color);
+	}
+	var objectSayColor = sayColor.bind(o);
+	objectSayColor();
+*/
+/*27.匿名函数
+	var sayHi;
+	if(condition){
+		sayHi = function(){
+			console.log('Hi');
+		}
+	}
+	else{
+		sayHi = function(){
+			console.log('Yo!');
+		}
+	}
+*/	
+/*28.递归阶乘函数
+		arguments.call();
+		函数表达式的好处
+	function factorial(num){
+		if(num<=1){
+			return 1;
+		}
+		else{
+			return num*factorial(num-1);
+		}
+	}
+	var anotherFactorial = factorial;
+	//factorial = null;耦合
+	console.log(anotherFactorial(4));
+	function factorial(num){
+		if(num<=1){
+			return 1;
+		}
+		else{
+			return num*arguments.callee(num-1);
+		}
+	}
+	var factorial = (function f(num){
+		if(num<=1){
+			return 1;
+		}
+		else{
+			return num*f(num-1);
+		}
+	})
+*/
+/*29.闭包:
+		 有权访问另一个函数作用域中的变量的函数
+		 在一个函数内部创建另一个函数
+	function createComparisonFunction(propertyName){
+		return function(object1,object2){
+			var value1 = object1[propertyName];
+			var value2 = object2[propertyName];
+			if(value1<value2){
+				return -1;
+			}else if(value1>value2){
+				return 1;
+			}else{
+				return 0;
+			}
+		};
+	}
+*/
+/*30.正常作用域链
+	function compare(value1,value2){
+		if(value1<value2){
+			return -1;
+		}else if(value1>value2){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+	var result = compare(5,10);
+	console.log(result);
+*/
+/*31.for循环和匿名函数配合使用
+	function createFunctions(){
+		var result = new Array();
+		for(var i =0;i<10;i++){
+			resulet[i] = function(){
+				return i;
+			};
+		}
+		return result;
+	}
+*/
+/*32.作用域深层嵌套
+	function createFunctions(){
+		var result = new Array();
+		for(var i =0;i<10;i++){
+			result[i] = function(num){
+				return function(){
+					return num;
+				};
+			}(i);
+		}
+		return result;
+	}
+	createFunctions();
+*/ 
+/*33.闭包中的this和arguments
+	var name = "The Window";
+	var object = {
+		name:'My Object',
+		getNameFunc:function(){
+			return function(){
+				return this.name;
+			};
+		}
+	};
+	console.log(object.getNameFunc()());
+*/ 
+/*34.for循环没有块级作用域
+	function outputNumbers(count){
+		for(var i=0;i<count;i++){
+			console.log(i);
+		}
+		console.log(i);
+	}
+	outputNumbers(5);
+*/ 
+/*35.私有作用域
+	(function(){
+		//块级作用域
+	})();
+*/ 
+/*36.很多开发人员共同参与的大新应用程序,创建私有作用域;
+	(function(){
+		var now= new Date();
+		if(now.getMonth()==0&&now.getDate()==1){
+			console.log('Happy new year!')
+		}
+	})();
+*/ 
+/*37.私有变量特权方法
+	function MyObject(){
+		var privateVariable = 10;
+		function privateFunction(){
+			return false;
+		}
+		this.publicMethod=function(){
+			privateVatiable++;
+			return privateFuntion();
+		};
+	}
+*/ 
+</script>
+</html>
