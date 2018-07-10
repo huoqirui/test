@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> layout</title>
+<style>
+/*1.一列布局.top{
+	height: 100px;
+	background-color: blue;
+}
+.main{
+	width: 800px;
+	background-color: #ccc;
+	height: 300px;
+	
+}
+.wrapper{
+	margin: 0 auto;
+}
+footer{
+	width: 800px;
+	height: 100px;
+	background-color: red;
+}
+*/
+/*2.浮动实现两列布局
+.left{
+	width: 20%;
+	height: 500px;
+	background-color: #ccc;
+	float: left;
+	opacity: 0.1;
+}
+.right{
+	width: 80%;
+	height: 500px;
+	background-color: red;
+
+}
+*/
+/*3.浮动作用机制.father{
+	border: 1px solid #000;
+	
+}
+.float{
+	float: left;
+	background-color: blue;
+}
+img{
+	vertical-align: top;
+
+}
+.animal{
+	margin: 0;
+	font-size: 17px;
+	margin-left: -100px;
+}
+.animal:first-line{
+	background-color: red;
+	color: #fff;
+}
+*/
+/*4.行框盒子区域受限制
+.father{
+	height: 64px;
+	border: 1px solid #444;
+}
+.float{
+	float:left;
+}
+.float img{
+	width: 60px;
+	height: 64px;
+}
+*/
+.prev{
+	float: left;
+}
+.next{
+	float: right;
+}
+.title{
+	margin: 0 70px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<!-- 1.一列布局<div class="top"></div>
+	<div class="main wrapper"></div>
+	<footer class="wrapper"></footer> -->
+	<!-- 2.浮动实现两列布局<div class="left"></div>
+	<div class="right"></div> -->
+	<!-- 3.浮动作用机制<div class="father">
+		<div class="float"><img src="img/bat.png" alt=""></div>
+		
+	</div>
+	<p class="animal">小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,小猫1,小猫2,,</p> -->
+	<!-- 4.浮动垂直区域行框盒子区域限制<div class="father">
+		<div class="float">
+			<img src="img/bat.png" alt="">
+		</div>
+		我是来检测只有高度是不能取消浮动带来的影响的;我是来检测只有高度是不能取消浮动带来的影响的;我是来检测只有高度是不能取消浮动带来的影响的;我是来检测只有高度是不能取消浮动带来的影响的;
+	</div>
+	<div class="test">见证行框盒子区域限制带来的影响</div> -->
+	<div class="box">
+		<a href='JavaScript:;' class="prev">上一章</a>
+		<a href='JavaScript:;' class="next">下一章</a>
+		<h3 class="title">第112章 动物环绕</h3>
+	</div>
+</body>
+<script>
+	/*1.浮动特性之块状化并格式化上下文,display:block
+										且一些内联属性不能在浮动元素上使用
+	var span = document.createElement('span');
+	document.body.appendChild(span);
+	console.log('1.'+window.getComputedStyle(span).display);
+	span.style.cssFloat = 'left';
+	console.log('2.'+window.getComputedStyle(span).display);
+	*/
+
+</script>
+</html>

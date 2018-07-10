@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scope </title>
+<style>
+
+</style>
+</head>
+<body>
+	
+</body>
+<script>
+/*1.浏览器预解析与执行过程
+	var a = 100;
+	console.log(a);
+*/
+/*2.函数声明提升至顶部
+	fn('zhangsan');
+	function fn(name){
+		console.log(name);
+	}
+*/
+/*3.函数内部局部变量
+	fn('zhangsan');
+	function fn(name){
+		age = 20;
+		console.log(name,age);
+		var age;
+	}
+*/
+/*4.函数内部
+			局部变量
+			嵌套函数
+	fn('zhangsan');
+	function fn(name){
+		age = 20;
+		console.log(name,age);
+		var age = 20;
+		bar(100);
+		function bar(num){
+			console.log(num);
+		}
+	}
+*/
+/*5//.arguments和this在执行之前是确定的
+ 	fn('zhangsan');
+	function fn(name){
+		console.log(this);
+		console.log(arguments);
+		age = 20;
+		console.log(name,age);
+		var age = 20;
+		bar(100);
+		function bar(num){
+			console.log(num);
+		}
+	}
+*/
+/*6.函数名.length得到形参的个数
+	function sayName(name){
+		console.log(name);
+	}
+	function sum(num1,num2){
+		return num1+num2;
+	}
+	function sayHi(){
+		console.log('Hi');
+	}
+	console.log(sayName.length);
+	console.log(sum.length);
+	console.log(sayHi.length);
+*/
+/*7.call()方法
+	function sum(num1,num2){
+		return num1+num2;
+	}
+	function callSum1(num1,num2){
+		return sum.apply(this,arguments);
+	}
+	function callSum2(num1,num2){
+		return sum.apply(this,[num1,num2]);
+	}
+	console.log(callSum1(10,10));
+	console.log(callSum2(10,10));
+*/
+/*8.匿名函数作为返回值
+	function sum(num1,num2){
+		return num1+num2;
+	}
+	console.log(sum(10,10));
+	function callSum1(num1,num2){
+		return sum(num1,num2);
+	}
+	console.log(callSum1(10,10));
+*/
+/*9.为什么有函数?
+			简化重复代码,变化的用参数表示,不变的写在函数内
+	抽象,不用管底层实现,可以进来扩展,抽象是面向对象编程语言的三大核心之一
+	function area_of_circle(r){
+		var area = 3.14*r*r;
+		console.log(area);
+	}
+	area_of_circle(5);
+	area_of_circle(6);
+*/
+/*10.
+	function abs(x){
+		if(typeof x !=='number'){
+			throw 'Not a number';
+		}
+		if(x>=0){
+			return x;
+		}else{
+			return -x;
+		}
+	}
+*/
+/*11.
+	function foo(x){
+		console.log('x = '+x);
+		for(var i=0;i<arguments.length;i++){
+			console.log('arg'+i+'='+arguments[i]);
+		}
+	}
+	foo(10,20,30);
+*/
+/*12.
+	function abs(){
+		if(arguments.length===0){
+			return 0;
+		}
+		var x =arguments[0];
+		return x >=0 ? x :-x;
+	}
+	console.log(abs());
+	console.log(abs(10));
+	console.log(abs(-9));
+*/
+/*13.foo(a[,b],c)
+				接收2~3个参数,b是可选参数,如果只传2个参数,b默认是null;
+	function foo(a,b,c){
+		if(arguments.length===2){
+			//实际拿到的是参数a和b,c为undefined
+			c = b;//把b献给c
+			b = null;//b变成默认值
+		}
+	}
+*/
+/*14.rest参数
+	function foo(a,b){
+		var i,rest=[];
+		if(arguments.length>2){
+			for(i=2;i<arguments.length;i++){
+				rest.push(arguments[i]);
+			}
+		}
+		console.log('a='+a);
+		console.log('b='+b);
+		console.log(rest);
+	}
+	var a = 'ab';
+	var b ='bo';
+	console.log(foo(a,b));
+*/
+/*15.
+	function area_of_circle(r,pi){
+		if(arguments.length===1){
+			pi = 3.14;
+		}
+		var area = pi*r*r;
+		return area;
+	}
+	console.log(area_of_circle(5));
+	console.log(area_of_circle(5,3));
+*/
+/*16.return语句后一定要注意是否有换行
+	function max(a,b){
+		if(a>b){
+			return a;
+		}else{
+			return b;
+		}
+	}
+*/
+/*17.不同的函数各自申明同一个变量
+			变量只在各自的函数体内其作用.
+			不同函数内部的同名变量互相独立.
+	function foo(){
+		var x = 1;
+		x = x+1;
+	}
+	function bar(){
+		var x = 'A';
+		x = x+'B';
+	}
+*/
+/*18.内部函数与外部函数同名
+			函数执行顺序也重要.
+	function foo(){
+		var x =1;
+		function bar(){
+			var x='A';
+			console.log('x in bar()='+x);
+		}
+		console.log('x in foo() =' +x);
+		bar();
+	}
+	foo();
+*/
+	
+</script>
+</html>
