@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> </title>
+<style>
+
+</style>
+</head>
+<body>
+	
+</body>
+<script>
+/*1.LHS
+	function foo(a){
+		console.log(a);
+	}
+	foo(2);
+	var variable = 'string';//几乎所有编程语言都能够存储变量当中的值;
+	console.log(variable);//变量引入程序,变量存储在哪里?需要时如何找到他们
+	console.log(variable.charCodeAt());//编译过程
+*/
+/*2.非严格模式下,RHS查询所有作用域找不到所需变量,则抛出ReferenceError
+	function foo(a){
+		console.log(a+b);
+		b=a;
+	}
+	foo(2);
+*/
+/*3.报错typeError   ReferenceError
+	function foo(){
+		console.log(var b);
+	}
+*/
+/*4.
+function foo(a){
+	var b =a*2;
+	function bar(c){
+		console.log(a,b,c);
+	}
+	bar(b*3);
+}
+foo(2);
+*/	
+/*5.只能接收字符串
+	console.log(eval(3));//3只接受字符串,如果不是则返回该参数;
+	console.log(eval('3+2'));//5;只接受字符串,直接对字符串进行编译,
+	//console.log(eval('hello'));//是字符串但是编译失败,ReferenceError
+	console.log(eval('3+2,5+8'));//13返回字符串中的最后一个表达式或语句的值,如果最后一个表达式或语句没有值,则最终返回undefined
+*/
+	var geval = eval;//使用别名调用eval将是全局eval
+	var x='global',y='global';//两个全局变量
+	function f(){//函数内指向的是局部eval
+		var x='local';//定义局部变量
+		eval("x+='changed';");//直接eval更改局部变量的值
+		return x;//返回更改后的局部变量
+	}
+	function g(){//这个函数内指向了全局eval
+		var y ='local';//定义局部变量
+		geval("y+='changed';");//讲解调用改变了全局变量的值
+		return y;//返回未更改的局部变量
+	}
+	console.log(f(),x);
+	console.log(g(),y);
+</script>
+</html>
