@@ -1,0 +1,34 @@
+body{
+	font-size: 12px;
+	background-color: #F5F5F5;
+}
+.top{
+	height: 27px;
+	overflow: hidden;
+	border-bottom: 1px solid #ccc;
+}
+/*包裹居中*/
+.wrapper{
+	width: 1000px;
+	margin: 0 auto;
+}
+.top ul{
+	float: right;
+	line-height: 27px;
+}
+.top li{
+	display: inline-block;
+	padding-left: 10px;
+}
+/*伪类制作左三角*/
+.top li::before{
+	content: '';
+	border: 5px solid transparent;
+	border-left-color:#000 ;
+	position: absolute;
+	margin-left: -10px;
+	top: 16px;
+}
+.top li a:hover,.top li a:active{
+	color: red;
+}
