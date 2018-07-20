@@ -32,3 +32,42 @@ body{
 .top li a:hover,.top li a:active{
 	color: red;
 }
+/*logo整体*/
+.logo{
+	height: 80px;
+	background-color: #fff;
+}
+/*logo-left*/
+.logo-left{
+	float: left;
+	width: 200px;
+	height: 80px;
+	background: url(../img/logo.jpg);
+	
+}
+/*隐藏文字 可访问性隐藏*/
+.logo-left h1{
+	position: absolute;
+	clip:rect(0 0 0 0);
+}
+.logo-right{
+	float: right;
+	height: 80px;
+	line-height: 80px;
+	margin-right: 10px;
+}
+.tel{
+	display: inline-block;
+	height: 28px;
+	line-height: 28px;
+	padding-left: 30px;
+	background: url(../img/tel.jpg) no-repeat ;
+	
+}
+.logo-right h1{
+	display: inline-block;
+	margin: 0;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color:#C00;
+}
