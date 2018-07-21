@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> </title>
+<style>
+
+</style>
+</head>
+<body>
+	
+</body>
+<script>
+/*1.定义函数
+			函数表达式和函数声明最明显的区别是:看其作为整体是不是以function开头
+			函数表达式特别适合用来定义那些只会用到一次的函数
+			IIFE(立即执行函数表达式):不污染作用域立即执行
+	函数名
+		  like_this()
+		  likeThis()
+		  _likeThis()内部函数或私有函数,以一条下划线为前缀
+	函数声明
+			并非真正的语句,不能出现在循环,条件判断,try catch finally with 语句中
+	函数表达式
+			 可以出现在任何地方
+var o={
+	name:'zc',
+	age:30
+};
+//输出对象o每个属性的名称和值,返回undefined
+function printprops(){
+	for(var p in o)
+		console.log(p+":"+o[p]+'\n');
+}	
+printprops();
+function distance(x1,y1,x2,y2){
+	var dx =x2-x1;
+	var dy=y2-y1;
+	return Math.sqrt(dx*dx+dy*dy);
+}
+//递归阶乘的递归函数
+//注意x的值从x到x递减
+function factorial(x){
+	if(x<=1) return 1;
+	return x*factorial(x-1);
+}
+//这个函数表达式定义了一个函数用来求传入参数的平方
+//注意我们把它复制给一个变量
+var square = function(x){return x*x;};
+//函数表达式可以包含名称,这儿在递归时很有用
+var f =function fact(x) {
+	if(x<=1){
+		return 1;
+	}else{
+		return x*fact(x-1);
+	}
+}
+//函数表达式可以作为参数传给其他函数
+data.sort(function (a,b){return a-b;});
+//函数表达式有时定义后立即调用
+var tensquared = (function (x){return x*x;}(10));
+*/
+/*2.函数调用表达式
+				 函数对象+(参数列表,参数列表2)
+printprops({x:1});//函数调用表达式
+var total = distance(0,0,2,1)+distance(2,1,3,5);//函数调用表达式
+var probability = factorial(5)/factorial(3);//函数调用表达式
+*/
+/*3.IIFE通常不使用this
+"use strict"
+var strict = (function(){return !this;}());
+console.log(strict);
+*/
+/*4.方法调用
+			属性访问表达式:对象+属性名
+			this指向对象属性的对象
+			对象成了调用上下文,函数执行的环境对象
+var calculator = {
+	operand1:1,
+	operand2:2,
+	add:function(){
+		this.result = this.operand1+this.operand2;
+	}
+};
+calculator.add();//调用方法
+console.log(calculator.result);
+o["m"](x,y);
+a[0](z);
+customer.surname.toUpperCase();//调用customer.surname的方法
+f().m()//在f()调用结束后继续调用返回值中的方法m()
+rect.setSize(width,height);//函数执行载体是rect对象
+setRectSize(rect,width,height);
+*/
+/*5.嵌套函数this值
+				不能从调用它的函数中继承this
+				谁调用this指向谁,不会从词法作用域中继承外部this值
+				this值函数执行的环境对象
+				this关键字不是变量
+
+var o ={//对象o
+	m:function(){//对象中的方法m()
+		var self =this;//将this的值保持至一个变量中
+		console.log(this===o);//输出true就是对象o
+		f();//调用辅助函数f()
+		function f(){//定义一个嵌套函数f()
+			console.log(this===o);//false;this的值是全局对象或undefined
+			console.log(self===o);//true;self指外部函数的this值
+		}
+	}
+}
+o.m();
+*/
+/*6.call()apply()以对象的方法调用函数
+f.call(o);//以对象o的方法来调用函数f()
+f.apply(o);//以对象o的方法来调用函数f()
+o.m=f;//f存储为对象o的临时方法
+o.m();//调用它不传入参数
+delete o.m;//将临时方法删除
+f.call(o,1,2)//对象o的方法调用函数f(),并传入两个参数,1,2
+f.apply(o,[1,2]);
+var biggest = Math.max.apply(Math,array_of_numbers); 
+*/
+/*7.忽略最后一个参数
+//将对象o中可枚举的属性名追加至数组a中,并返回这个数组a
+var o={
+	name:'lili',
+	age:30
+};
+var p={
+	name:'peter'
+}
+function getPropertyNames(o,a){
+	if(a===undefined){//如果省略a,则创建一个新数组并返回这个新数组
+		a = [];
+	}
+	for(var property in o){
+		a.push(property);
+	}
+	return a;
+}
+var a = getPropertyNames(o);
+console.log(a);
+console.log(getPropertyNames(p,a));
+*/
+/*8.arguments实参对象
+					可以用来通过类数组下标访问传入的实际参数,不用形参
+function max(){
+	var max =Number.NEGATIVE_INFINITY;
+	//遍历实参,查找并记住最大值
+	for(var i =0;i<arguments.length;i++){
+		if(arguments[i]>max){
+			max=arguments[i];
+		}
+	}
+	return max;
+}
+var largest = max(1,10,100,2,3,1000,4,5,10000,6);
+console.log(largest);
+*/
+/*9.实参对象arguments与对应形参相互影响
+function f(x){
+	console.log(x);
+	arguments[0] = null;
+	console.log(x);
+}
+f(1);
+*/
+/*10.对象字面量作为函数参数
+						不用写那么多形参
+function displayInfo(args){//参数就一个args
+	var output = '';//输出值是一个空字符串
+	if(typeof args.name=="string"){//当参数的name属性是字符串
+		output +="Name: "+args.name+"\n";//输出显示名+对应的值
+	}
+	if(typeof args.age=="number"){//判断传入参数是数字,则显示年龄
+		output += "Age: "+args.age+"\n";
+	}
+	console.log(output);
+}
+displayInfo({name:"Nichlas",age:29});
+displayInfo({name:"Greg"});
+*/
+/*11.对象作为实参的好处
+						不用记实参的正确顺序
+//将原始数组的length元素父子至目标数组
+//开始父子原始数组的from_start元素
+//并且将其复制至目标数组的to_start中
+//要记住实参的顺序并不容易
+function arraycopy(from,from_start,to,to_start,length){//5个参数,而且实参还要记住正确顺序
+	//逻辑代码
+}
+function easycopy(args){//就一个形参来接收对象参数
+	arraycopy(args.from,args.from_start || 0,args.to,args.from_start || 0,args.length);
+	console.log(arraycopy);
+}
+var a =[1,2,3,4],b=[];//原始数组a,目标数组b
+easycopy({from:a,to:b,length:4});//参数是一个对象,只需要通过访问对象的属性,取得实参即可
+console.log(easycopy({from:a,to:b,length:4}));
+*/
+/*12.对传入的实参进行类型检测
+			宁愿程序在传入非法值时报错,
+			也不愿非法值导致程序在执行时报错
+function sum(a){
+	if(isArrayLike(a)){//如果是数组则执行各数组元素相加
+		var total =0;
+		for(var i =0;i<a.length;i++){//循环遍历每个数组元素
+			var element =a[i];//每个数组元素赋值给element
+			if(element==null){//如果数组是null则跳过此步
+				continue;
+			}
+			if(isFinite(element)){
+				total+=element;
+			}else{
+				throw new Error("sum():elements nust be finite numbers");
+			}
+		}
+		return total;
+	}
+	else{
+		throw new Error("sum():arguments must be array-like");
+	}
+}
+sum([1,2]);
+*/
+/*13.函数作为值
+			函数赋值给变量
+			函数作为对象的属性
+			函数作为数组项
+function square(x){return x*x};
+var s =square;//函数是对象,函数名是指针,把函数指针给变量s//函数赋值给变量
+console.log(square(4));
+console.log(s(4));//变量s同样可以执行函数调用,指向同一个函数
+var o ={square:function(x){return x*x;}};//作为对象属性的函数,
+console.log(o.square(2));//作为对象的方法调用
+var y =o.square(2);//对象方法调用结果给了变量y
+console.log(y);
+var a =[function(x){return x*x;},20];//函数作为数组元素
+a[0](a[1]);
+console.log(a[0](a[1]));
+*/
+
+</script>
+</html>
