@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>具有相对特性的无依赖absolute,没有left/top/right/bottom+其祖先元素也没有定位元素</title>
+	<style>
+div{width: 200px;height: 100px;}
+.father{background-color: red;}
+.son{width: 30px;height: 20px;background-color: blue;
+position: absolute;}
+.two{background-color: yellow;width: 100px;height: 50px;}
+.other{background-color: pink;position:relative;}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+		<div class="two"></div>
+	</div>
+	<hr>
+	<div class="other"></div>
+</body>
+</html>
