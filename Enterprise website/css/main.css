@@ -121,3 +121,11 @@ body{
 	overflow: hidden;
 
 }
+#boxID{
+	height: 310px;
+}
+.pic{
+	width: 1000px;
+	height: 310px;	
+	overflow: hidden;
+}
