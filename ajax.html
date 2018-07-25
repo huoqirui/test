@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> ajax</title>
+<style>
+
+</style>
+</head>
+<body>
+	<input type="button" id="btn"value="按钮">
+</body>
+<script>
+/*1.ajax实现简单原理
+	var oBtn=document.getElementById('btn');
+	oBtn.onclick=function(){
+		//打开浏览器
+		1.创建ajax对象
+		var xhr = new XMLHttpRequest();
+		//在地址栏中输入地址
+		xhr.open('get','1.txt',true);
+		//提交
+		xhr.send();
+		//等待服务器返回内容
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4){
+				alert(xhr.responseText);
+			}
+		}
+	}
+*/
+/*2.处理异常
+try{
+	//代码尝试执行的这个块中的内容,如果有错误,则会执行catch{},并且传入错误信息参数
+	console.log(a);
+}catch(e){
+	console.log(2);
+}
+*/
+/*3.try catch
+//console.log(a);//影响后面语句的执行
+//console.log('hello');
+try{
+	console.log(a);//可能会抛出错误的代码放在try语句中,不影响后面的语句执行
+}catch{
+	console.log('hello');//处理错误的代码放在catch语句中
+}
+*/
+/*4.catch接受一个包含错误信息的对象
+			错误信息的对象的message
+							name
+try{
+	window.someNonexistentFunction();
+}catch(error){
+	console.log(error.message);
+}
+*/
+/*5.function testFinally(){
+	try{
+		return 2;
+	}catch(error){
+		return 1;
+	}finally{
+		return 0;//最终都会被执行
+	}
+}
+var result=testFinally();
+console.log(result);
+*/
+</script>
+</html>
