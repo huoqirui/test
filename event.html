@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>event </title>
+	<style>
+		div{
+			border: 1px solid #000;
+			width: 200px;
+			height: 100px;
+		}
+	</style>
+	<script src="eventutil.js"></script>
+</head>
+<body>
+	<input type="button" id="myBtn"value="button">
+	<a href="www.baidu.com" id="myLink">点击不会跳转</a>
+	<div id="myDiv"></div>
+</body>
+<script>
+	var btn=document.getElementById('myBtn');
+	// btn.onclick=function(){
+	// 	console.log(event.currentTarget==this);
+	// 	console.log(event.target==this);
+	// }
+	// document.body.onclick=function(event){
+	// 	console.log(event.currentTarget===document.body);
+	// 	console.log(this===document.body);
+	// 	console.log(event.target===document.getElementById("myBtn"));
+	// }
+	var handler=function(event){
+		switch(event.type){
+			case "click":
+			console.log("clicked");
+			break;
+			case "mouseover":
+			event.target.style.backgroundColor="red";
+			break;
+			case "mouseout":
+			event.target.style.backgroundColor="";
+			break;
+		}
+	};
+	btn.onclick=handler;
+	btn.onmouseover=handler;
+	btn.onmouseout=handler;
+	var link=document.getElementById('myLink');
+	link.onclick=function(){
+		event.preventDefault();
+	}
+	btn.onclick=function(event){
+		console.log("event.eventPhase");
+		//event.stopPropagation();
+	};
+	document.body.onclick=function(event){
+		console.log("Body clicked");
+	};
+	EventUtil.addHandler(window,"load",function(event){
+		console.log("load");
+	});
+	EventUtil.addHandler(window,'onload',function(event){
+		alert("unload");
+	});
+	EventUtil.addHandler(window,"resize",function(event){
+		alert("resize");
+	});
+	EventUtil.addHandler(window,"scroll",function(event){
+		if(document.compatMode=="CSSCompat"){
+			console.log(document.documentElement.scrollTop);
+		}else{
+			console.log(document.body.scrollTop);
+		}
+	});
+	var div=document.getElementById("myDiv");
+	EventUtil.addHandler(div,"click",function(event){
+		event=EventUtil.getEvent(event);
+		console.log("Client coordinates:"+event.clientX+","+event.clientY);
+	});
+</script>
+</html>

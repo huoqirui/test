@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>event type</title>
+	<style>
+		#box{
+			border: 1px solid red;
+			width: 600px;
+			height: 200px;
+		}
+		#tip{
+			display: none;
+		}
+	</style>
+	<script src="eventutil.js"></script>
+<script>
+	EventUtil.addHandler(window,'load',function(){
+		var box=document.getElementById('box');//获取元素,但是文档解析还没有加载完
+		// var clicked=function(){//命名函数
+		// 	console.log('我被点击了');
+		// };
+		// box.onclick=clicked;//调用执行
+		var tip=document.getElementById('tip'),
+			phone=document.getElementById('phone');
+		phone.onfocus=function(){//只有text password textarea有获取焦点事件
+			tip.style.display='inline';
+		};
+		phone.onblur=function(){
+			var phoneValue=this.value;
+			if(phoneValue.length==11 && isNaN(phoneValue)==false){
+				tip.innerHTML='正确';
+			}else{
+				tip.innerTHML='请输入正确的格式';
+			}
+		};
+	});
+	// window.onload=function(){
+	// 	var box=document.getElementById('box');//获取元素,但是文档解析还没有加载完
+	// 	var clicked=function(){//命名函数
+	// 		console.log('我被点击了');
+	// 	};
+	// 	box.onclick=clicked;//调用执行
+	// };
+</script>
+</head>
+<body>
+	<div id="box">
+		<div id="left">
+			<input type="text"id='phone'placeholder="请输入手机号码">
+		</div>
+		<span id="tip">请输入手机号码</span>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> </title>
+	<style>	</style>
+	<script>
+		window.onload=init;
+		function init(){
+			var menu=document.getElementById('menu');
+			menu.onchange=function(){//onchange一般作用在select CheckBox radio复选框
+				var bgcolor=this.value;
+				//var bgcolorhmlt5=menu.options[menu.selectedIndex].value;
+				document.body.style.backgroundColor=this.value;
+			}
+		}
+	</script>
+</head>
+<body>
+<div class="box">
+	<select name="bgselect" id="menu">
+		<option value="se">请选择</option>
+		<option value="red">red</option>
+		<option value="green">green</option>
+		<option value="blue">blue</option>
+		<option value="gray">gray</option>
+		<option value="orange">orange</option>
+	</select>
+</div>	
+</body>
+
+</html>
