@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rich text ContextMenu Event Example</title>
+	<script src="eventutil.js"></script>
+<script>
+	EventUtil.addHandler(window,'load',function(event){
+		//frames["richedit"].document.designMode="on";
+		//document.execCommand('bold',false,null);
+		var div=document.getElementById('myDiv');
+		EventUtil.addHandler(div,'contextmenu',function(event){
+			event=EventUtil.getEvent(event);
+			EventUtil.preventDefault(event);
+			var menu=document.getElementById('myMenu');
+			menu.style.left=event.clientX+'px';
+			menu.style.top=event.clientY+'px';
+			menu.style.visibility='visible';
+		});
+		EventUtil.addHandler(document,'click',function(event){
+			document.getElementById('myMenu').style.visibility='hidden';
+		});
+		EventUtil.addHandler(window,'beforeunload',function(event){
+			event=EventUtil.getEvent(event);
+			var message="I'm really going to miss you if you go.";
+			event.returnValue=message;
+			return message;
+		});
+	})
+</script>
+<style>
+	div{
+		border: 1px solid #000;
+	}
+	ul{
+		visibility:hidden;
+		background-color: silver;
+		position: absolute;
+	}
+</style>
+</head>
+<body>
+	<div class="editable" id="richedit" contenteditable></div>
+	<div id="myDiv">Right click or Ctril+click me to get a custom context menu.Click anwwhere else to get the default context menu.</div>
+	<ul id="myMenu">
+		<li><a href="#">site</a></li>
+		<li><a href="#">Wrox site</a></li>
+		<li><a href="#">Yahoo!</a></li>
+	</ul>
+</body>
+
+</html>

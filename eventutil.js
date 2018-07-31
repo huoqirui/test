@@ -26,7 +26,7 @@ var EventUtil={
 	},	
 	preventDefault:function(event){
 		if(event.preventDefault){
-			event.preventDeafult();
+			event.preventDefault();
 		}else{
 			event.returnValue=false;
 		}

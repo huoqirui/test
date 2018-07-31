@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>pattern</title>
+	<script>
+	window.onload=function(){
+		var aT=document.getElementsByTagName('textarea');
+		var oInput=document.getElementById('input1');
+		var re=/菲|中国|监视/g;
+		oInput.onclick=function(){
+			aT[1].value=aT[0].value.replace(re,function(str){
+				var result='';
+				for(var i=0;i<str.length;i++){
+					result+="*";
+				}
+				return result;
+			});
+		};
+	}
+	</script>
+</head>
+<body>
+	替换前: <br>
+	<textarea  cols="30" rows="10"></textarea>
+	<br>
+	替换后: <br>
+	<textarea  cols="30" rows="10"></textarea>
+	<input type="button"value="确认"id="input1">
+</body>
+<script>
+/*1.字符串常用方法
+	var str ='abhello world!';
+	console.log(str.indexOf('e'));
+	console.log(str.charAt(4));
+	console.log(str.charCodeAt(1));
+	console.log(String.fromCharCode(104,101,108,108,111));
+	console.log(str.charCodeAt(0));
+	console.log(str.charCodeAt(1));
+	console.log(String.charCodeAt('a'));
+*/
+/*2.判断字符串是不是数字字符串
+var str='5';
+console.log(typeof str);
+console.log(isNaN(str));
+if(isNaN(str)){
+	console.log('是不是数字')
+}else{
+	console.log('是数字')
+}
+if(str<='9'&& str>='0'){
+	console.log('是数字类型的字符串');
+}else{
+	console.log('不是数字类型的字符串');
+}
+*/
+//找出字符串中的数字字符以数组形式返回
+/*3.js判断筛选条件
+var str='haj123sdk54hask33dkhalsd879';
+function findNum(str){
+	var arr=[];
+	var tmp;
+	for(var i=0;i<str.length;i++){
+		if(str.charAt(i)<='9'&& str.charAt(i)>='0'){
+			//arr.push(str.charAt(i));
+			tmp+=str.charAt(i);
+		}else{
+			if(tmp){
+				arr.push(tmp);
+				tmp='';
+			}
+		}
+		if(tmp){
+			arr.push(tmp);
+			tmp='';
+		}
+		return arr;
+	}
+	return arr;
+}
+console.log(findNum(str));
+*/
+/*4//正则表达式
+var str='haj123sdk54hask33dkhalsd879';
+function findNum(str){
+	return str.match(/\d+/g);//省略循环字符串方法
+}
+console.log(findNum(str));
+*/
+/*5.正则test()方法返回true或者false
+			用正则表达式去匹配字符串中的内容
+			有true
+			无false
+var str='abcdef';
+var re=/d/;
+console.log(re.test(str));
+*/
+/*5.若r变成t则需要转义字符
+var str='37482r9348791';
+var re=/\D/;
+if(re.test(str)){
+	console.log('不全是数字');
+}else{
+	console.log('全是数字');
+}
+*/
+/*5.转义字符初步认识
+var str='n'//这就是n
+console.log('n');
+console.log('\n');
+console.log('\t');
+\s:空额
+\S:非空格
+\d:数字
+\D:非数字
+\w:字符(字母,数字,下划线_)
+\W:非字符
+大写都是非,空格非空格数字非数字字符非字符
+*/
+/*6.search()
+		字符串.search(正则);
+		默认是区分大小写
+		不区分大小写i/d/i
+var str='adcbef';
+var re=/B/;
+console.log(str.search(re));
+*/
+/*7.match()
+	字符串.match(正则)
+	匹配成功返回数组
+	不成功null
+var str='haj123sdk54hask33dkhalsd879';
+var re=/\d\d\d/g;
+console.log(str.match(re));
+*/
+/*8.replace()
+		匹配成功则替换
+var str ='aaa';
+var re=/a+/g;
+str=str.replace(re,'b');
+console.log(str);
+*/
+/*9.search()找到匹配的位置下标
+var str="Hello,my name is Ben. Please visit my website at http://www.forta.com";
+var reg=/Ben/;
+console.log(str.search(reg));
+console.log(str.search(/Ben/));
+*/
+var str="sales1.xls orders3.xls sales2.xls";
+var reg=/sales./g;
+console.log(str.match(reg));
+</script>
+</html>
