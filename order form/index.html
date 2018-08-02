@@ -4,12 +4,14 @@
 	<meta charset="UTF-8">
 	<title>order Form</title>
 	<link rel="stylesheet" href="css/main.css">
-	<script src="modernizr.js"></script>
+	<!-- <script src="modernizr.js"></script> -->
 	<script src='app.js'></script>
+	
 </head>
 <body>
-	<form action="/submit">
+	<form action="/submit"name="order"method="post">
 		<h1>order Form</h1>
+		<!-- 联系方式明细 -->
 		<fieldset>
 			<legend>Contact Details</legend>
 			<ul>
@@ -68,6 +70,7 @@
 				</li>
 			</ul>
 		</fieldset>
+		<!-- 登录明细 -->
 		<fieldset>
 			<legend>Login Details</legend>
 			<ul>
@@ -85,6 +88,7 @@
 				</li>
 			</ul>
 		</fieldset>
+		<!-- 订单明细 -->
 		<fieldset>
 			<legend>Order Details</legend>
 			<table>
@@ -101,7 +105,7 @@
 					<tr>
 						<td>COMP001 <input type="hidden" name="product_code" value="COMP001"></td>
 						<td>The Ultimate Smartphone</td>
-						<td><input type="number" data-pirce="399.99" name="quantity" value="0" min="0" max="99" maxlength="2"></td>
+						<td><input type="number" data-price="399.99" name="quantity" value="0" min="0" max="99" maxlength="2"></td>
 						<td>$399.99</td>
 						<td>
 							<output name="item_total" class="item_total">$0.00</output>
@@ -140,6 +144,7 @@
 				</tfoot>
 			</table>
 		</fieldset>
+		<!-- 付款明细 -->
 		<fieldset>
 			<legend>Payment Details</legend>
 			<ul>

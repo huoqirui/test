@@ -9,3 +9,7 @@ li{
 div{
 	display: inline-block;
 }
+.invalid{
+	background-color: #ffd4d4;
+	border: 1px solid maroon;
+}

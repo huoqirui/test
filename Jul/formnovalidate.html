@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>novalidate form submit formnovalidate</title>
+</head>
+<body>
+	<form action="signup.php" novalidate>
+		<!-- 这里插入表单元素 -->
+	</form>
+	<form action="foo.php"method="post">
+		<input type="text" required>
+		<input type="submit" value="Regular Submit">
+		<input type="submit" value="No-validating Submit" formnovalidate>
+		<input type="number" name="valueAsNumber" id="valueAsNubmer">
+	</form>
+</body>
+<script>
+	var oNum=document.getElementById('valueAsNubmer');
+	console.log(oNum);
+	console.log(oNum.valueAsNumber);
+</script>
+</html>
