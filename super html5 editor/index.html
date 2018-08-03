@@ -42,6 +42,40 @@
 			</div>
 		</details>
 	</section>
-	<section id="editor"></section>
+	<section id="editor">
+		<h1>Editing <span id="file_name"></span><a href="#list">Back to File Browser</a></h1>
+		<div class="mode-toolbar">
+			<div class="left">
+				<div>Edit Mode:</div>
+				<button id="edit_visual" class="split_left active">Visual</button>
+				<button id="edit_html" class="split_right">HTML</button>
+			</div>			
+			<div class="right">
+				<button id="file_save" class="green">Save File</button>
+				<button id="file_preview">Save &amp; Preview</button>
+			</div>			
+		</div>
+		<details open>
+			<summary>File Contents</summary>
+			<div id="file_contents">
+				<div id="file_contents_visual">
+					<div id="file_contents_visual_toolbar">
+						<button data-command="blod"><strong>B</strong></button>
+						<button data-command="italic"><em>I</em></button>
+						<button data-command="underline"><u>U</u></button>
+						<button data-command="strikethrough"><del>S</del></button>
+						<button data-command="insertUnorderedList">List</button>
+						<button data-command="createLink">Link</button>
+						<button data-command="insertImage">Image</button>
+						<button data-command="insertMap">Location Map</button>
+					</div>
+					<iframe id="file_contents_visual_editor"></iframe>
+				</div>
+				<div id="file_contents_html">
+					<textarea  id="file_contents_html_editor" cols="30" rows="10"></textarea>
+				</div>
+			</div>
+		</details>
+	</section>
 </body>
 </html>

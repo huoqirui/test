@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learn jquery</title>	
+</head>
+<body>
+	<h1>点击变成第1行行号1借助自定义属性</h1>
+	<h1>点击变成第2行行号2借助自定义属性</h1>
+	<h1>点击变成第3行行号3借助自定义属性</h1>
+	<h1>点击变成第4行行号4借助自定义属性</h1>
+	<h1>点击变成第5行行号5借助自定义属性</h1>
+</body>
+<script>
+	var aH=document.getElementsByTagName('h1');
+	var aHleng=aH.length;
+	for(var i=0;i<aHleng;i++){
+		aH[i].onclick=function(){
+			this.index=i++;
+			console.log(this.index);
+		}
+		
+	}
+	
+</script>
+</html>
