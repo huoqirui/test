@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>document.getElementsByTagName()通过标签名</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<!-- for套for<ul id="list">
+		<li>
+			<ul>
+				<h2>我的好友</h2>
+				<li>刘瑞</li>
+				<li>老齐</li>
+				<li>赵</li>
+			</ul>
+		</li>
+		<li>
+			<ul>
+				<h2>我的黑名单</h2>
+				<li>全面面包</li>
+				<li>膳食纤维</li>
+				<li>拉喉咙眼</li>
+			</ul>
+		</li>		
+	</ul> -->
+	<!-- cssText影响行内样式<div class="box"></div>
+	<input type="button" value="cssText只影响行间"id="input"> -->
+	<!-- 循环生成列表<input type="button" value="点击生成新闻列表" id="list">
+	<ul id="newList"></ul> -->
+	<!-- 引出this的用法<input type="button" value="按钮1">
+	<input type="button" value="按钮2">
+	<input type="button" value="按钮3"> -->
+	<!-- 自定义属性data<input type="button" value="按钮" data-price="399"> -->
+<!-- 	自定义属性各自控制各自的<img src="img/off.png" alt="">
+	<img src="img/off.png" alt="">
+	<img src="img/off.png" alt=""> -->
+<!-- 自定义属性加数字	<input type="button" value="0">
+	<input type="button" value="0">
+	<input type="button" value="0"> -->
+	<input type="button" value="btn1">
+	<input type="button" value="btn2">
+	<input type="button" value="btn3">
+</body>
+<script>
+	//1.getElementsByTagName()动态方法,前面可加document或者其他对象
+	/*2.for循环
+	var count=10;
+	for(var i=0;i<count;i++){
+		console.log(i);
+	}
+	*/
+	/*3.等价的while语句,while语句做不到的,for循环肯定也做不到
+	var i=0,
+		count=10;
+	while(i<count){
+		console.log(i);
+		i++;
+	}
+	*/
+	/*4.没有块级作用域,循环体内定义的变量,循环体外部仍可以调用,但是调用的是循环完成后i的值
+	var count=10;
+	for(var i=0;i<count;i++){
+		console.log(i);//循环内部定义变量,没有块级作用域
+	}
+	console.log(i);//10循环外部访问循环内部定义的变量,变量i是循环完成后的值
+	*/
+	/*5.给每一个加index什么可以加在循环体内,不用放在点击事件函数内吧
+	var aLi=document.getElementsByTagName('li');
+	var arr=['今天','明天','后天'];
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].innerHTML=arr[i];//循环体内i是循环的
+		aLi[i].onclick=function(){
+			console.log(i);
+		}
+	}
+	*/
+	//提高性能值加多个+=,往页面加document.body页面加东西,加一个document.body.innerHTML='<input>',
+	/*6.提高性能之用固定值
+	var str='';//声明一个字符串,因为这是插入的html字符串
+	for(var i=0;i<200;i++){
+		//document.body.innerHTML+='<input type="button" value="按钮">';//循环体每次都要去document.body中找,太慢
+		str+='<input type="button" value="按钮">';
+	}
+	document.body.innerHTML=str;//最后统一给,不需要每次循环都计算了
+	*/
+	/*7.for套for
+			先外层0再内层0 1 2 直到内部为假跳出
+			再外层1
+			先外层再内层循一遍,直到内层为假,出内层
+			再外层
+	var arr=[[1,2,3],[4,5,6],[7,8,9]];
+	for(var i=0;i<arr.length;i++){
+		for(var j=0;j<arr[i].length;j++){
+			console.log(arr[i][j]);
+		}
+	}
+	*/
+	/*8.for套fof实现层层列表中最内层的列表
+	var oUl=document.getElementById("list");
+	var aUl=oUl.getElementsByTagName("ul");
+	console.log(aUl.length);
+	var aLi=null;
+	for(var i=0;i<aUl.length;i++){
+		aLi=aUl[i].getElementsByTagName('li');
+		for(var j=0;j<aLi.length;j++){
+			aLi[j].style.backgroundColor="red";
+		}
+	}
+	*/
+	/*9.querySelector()接收css选择符返回一个
+			css选择符:#id .class div
+		querySelectorAll()返回所以是一个类数组
+		前面加document 或者Element类
+	var oDiv=document.querySelector('.box');
+	var oInput=document.querySelector('#input');
+	oDiv.onclick=function(){
+		oDiv.style.cssText="width:200px;height:200px;";
+	}
+	oInput.onclick=function(){
+		oDiv.style.cssText='';
+	}
+	*/
+	/*10.//利用for循环点击按钮生成新闻列表	
+		 //问题:点击一次按钮生成5个列表
+		 //解决思路:
+		 		//1.按钮身上找原因:
+		 		         //按钮点击之后不能点击
+		 		         //按钮点击之后消失
+		 		//2.先清空再生成
+		 			//点击一次走5列表,没点一次循环这么多,点下去之后先清空再生成
+		 		//3.判断
+		 			//true执行{}内容 考虑代码的执行顺序
+
+	var oBtn=document.getElementById('list');
+	var oUl=document.getElementById('newList');
+	var arr=['星期一新闻','星期二新闻','星期三新闻','星期四新闻','星期五新闻'];
+	var onOff=true;//辅助判断
+	oBtn.onclick=function(){
+		//oUl.innerHTML='';//先清空再生成,性能有点差
+		if(onOff){
+			for(var i=0;i<arr.length;i++){
+				oUl.innerHTML+='<li>'+arr[i]+'</li>';
+			}
+			onOff=false;
+		}
+		//onOff=false;执行顺序放在if()下或者里面都可以
+		//oBtn.disabled=true;//按钮点击之后不能点击
+		//oBtn.style.display="none";//按钮点击之后消失
+	}
+	*/
+	/*11.this指向问题
+				this一般指向window
+							作为函数调用
+							对象
+							apply(),call()
+var aBtn=document.getElementsByTagName('input');
+var that;//间接偷梁换柱this
+for(var i=0;i<aBtn.length;i++){
+	//aBtn[i].onclick=function(){1.点击匿名函数中调用外部函数
+		//this.style.backgroundColor="red";//直译
+		//that=this;//指向aBtn[i];
+		//fnTab(that);//组件化开发的思路呗,之前都是过程式开发
+	//}
+	aBtn[i].onclick=fnTab;
+}
+function fnTab(that){
+	//that.style.backgroundColor="green";//偷梁换柱that
+	this.style.backgroundColor="yellow";//点击后跟函数名this就是指向谁调用它的对象abtn[i]
+}
+console.log(aBtn);
+*/
+/*12.自定义属性data前缀加在html标签中
+			用getAttribute('data-')访问
+			obj.dadaset.*访问
+	也可以给对象加属性用于创建判断 
+var oBtn=document.querySelector('input');
+oBtn.abc='123';
+console.log(oBtn.dataset.price);
+console.log(oBtn.getAttribute('data-price'));
+*/
+/*13.自定义属性实现开关按钮
+var aImg=document.getElementsByTagName('img');
+//var onoff=true;//只控制一组用自定义属性
+for(var i=0;i<aImg.length;i++){
+	aImg[i].onoff=true;//自身
+	aImg[i].onclick=function(){
+		if(this.onoff){
+			this.src="img/on.png";
+			this.onoff=false;
+		}else{
+			this.src="img/off.png";
+			this.onoff=true;
+		}		
+	}
+}
+*/
+/*13.自定义属性添加数值
+var aBtn=document.getElementsByTagName('input');
+var arr=['A','B','C','D'];
+for(var i=0;i<aBtn.length;i++){
+	aBtn[i].num=0;
+	aBtn[i].onclick=function(){
+		this.value=arr[this.num];
+		this.num++;
+		if(this.num===arr.length){
+			this.num=0;
+		}
+	}
+}
+*/
+/*14.添加索引值,匹配数组,或者其他this.index
+var aBtn=document.getElementsByTagName('input');
+var arr=['刘瑞','老齐','老王'];
+for(var i=0;i<aBtn.length;i++){
+	aBtn[i].index=i;
+	aBtn[i].onclick=function(){
+		this.value=arr[this.index];
+	}
+}
+*/
+</script>
+</html>
