@@ -3,24 +3,79 @@
 <head>
 	<meta charset="UTF-8">
 	<title>learn jquery</title>	
+	<script src="../jquery.min.js"></script>
+	<style>
+		ul{
+			list-style: none;
+			padding: 0;
+		}
+		ul li{
+			display: inline-block;
+		}
+		.menu{
+			background-color: #000;
+			margin: 0;
+			color:#fff;
+			font-size: 30px;
+		}
+		.menu li:hover{
+			background-color: #ccc;
+		}
+		.info{
+			height: 50px;
+			background-color: #ccc;
+			overflow: hidden;
+		}
+	</style>
 </head>
 <body>
-	<h1>点击变成第1行行号1借助自定义属性</h1>
+<!-- 1.单击换行号	<h1>点击变成第1行行号1借助自定义属性</h1>
 	<h1>点击变成第2行行号2借助自定义属性</h1>
 	<h1>点击变成第3行行号3借助自定义属性</h1>
 	<h1>点击变成第4行行号4借助自定义属性</h1>
-	<h1>点击变成第5行行号5借助自定义属性</h1>
+	<h1>点击变成第5行行号5借助自定义属性</h1> -->
+	
+	<ul class="menu">
+		<li>php</li>
+		<li>linux</li>
+		<li>javascript</li>
+	</ul>
+	
+	<div class="info">
+		<p>php</p>
+		<p>linux</p>
+		<p>javascritp</p>
+	</div>
 </body>
 <script>
+/*1.jsfor循环遍历
 	var aH=document.getElementsByTagName('h1');
+	var num=1;
 	var aHleng=aH.length;
 	for(var i=0;i<aHleng;i++){
+		aH[i].index=num++; //辅助自定义属性html看不到
 		aH[i].onclick=function(){
-			this.index=i++;
-			console.log(this.index);
-		}
-		
+			this.innerHTML=this.index;			
+		}		
 	}
-	
+*/
+/*2.jQuery思路
+		找到每一个h元素
+		给每一个h元素添加属性自定义索引值
+		添加单击事件
+$('h1').each(function(i){
+	$('h1').get()[i].setAttribute('num',i+1);
+});
+$('h1').click(function(){
+	this.innerHTML=this.getAttribute('num');
+});
+*/
+/*3.标签页效果
+$('.menu li').mouseenter(function(){
+	idx=$(this).index('.menu li');
+	$('.info p').eq(idx).show();
+	$('.info p').not($('.info p').eq(idx)).hide();
+});
+*/
 </script>
 </html>

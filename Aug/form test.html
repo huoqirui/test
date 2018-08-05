@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form test</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<form action="reg.php"method="get">
+		<p>用户名</p>
+		<p><input type="text"name="username"><span >用户名的长度至少6位</span>
+		</p>
+		<p>密码</p>
+		<p><input type="text"name="password"></p>
+		<p>确认密码</p>
+		<p><input type="text"name="confirm_password"></p>
+		<p><input type="submit"value="OK"></p>
+	</form>
+</body>
+<script>
+	$('input[name="username"]').blur(function(){
+		console.log('1');
+	});
+	$('input[name="password"]')
+	$('input[name="confirm_password"]')
+</script>
+</html>

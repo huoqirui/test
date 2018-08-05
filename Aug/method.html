@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>method</title>
+	<script src="../jquery.min.js"></script>
+	<style>
+.test{
+	background-color: red;
+}
+
+	</style>
+</head>
+<body>
+	<!--1.index()返回索引值 <ul>
+		<li id="foo">foo</li>
+		<li id="bar">bar</li>
+		<li id="baz">baz</li>
+	</ul> -->
+	<!-- 3.css()属性<p class="test">我是红色</p>
+	<p>我是</p>
+	<p>我是</p> -->
+	<!-- 4.基础选择器<h1 id="hid">aaaaaaaaaa</h1>
+	<h1 class="hcls">bbbbbbb</h1>
+	<h1>cccccccc</h1>
+	<p>ppppppppp</p>
+	<p>ppppppppp</p>
+	<p>ppppppppp</p> -->
+	<!--5.层级选择器 <div class="div1">
+		<h1>aaaaaaa</h1>
+		<h1>bbbbbbb</h1>
+		<div class="div11">
+			<h1>cccccccc</h1>
+			<h1>dddddddd</h1>
+		</div>
+	</div>
+	<h1>eeeeeeeee</h1>
+	<h1>fffffffff</h1> -->
+	<!-- 6.基本选择器<ul>
+		<li>list item1</li>
+		<li>list item2</li>
+		<li>list item3</li>
+		<li>list item4</li>
+		<li>list item5</li>
+	</ul> -->
+	<!-- 7.内容选中器<div>
+		<p>Hello</p>
+	</div>
+	<div> </div> -->
+	<!-- 8.属性选择器<div>
+		<p>Hello!</p>
+	</div>
+	<div id="test2"></div>
+	<input type="checkbox" name="newsletter" value="Hot Fuzz">Hot Fuzz
+	<input type="checkbox" name="newsletter" value="Cold Fusion">Cold Fusion
+	<input type="checkbox" name="accept" value="Evil Plans">Evil Plans
+	<input type="radio"name="letter">letter
+	<input type="radio"name="milkman">milkman
+	<input type="radio"name="newsboy">newsboy
+	<input id="man-news" name="man-news" />
+	<input name="milkman" />
+	<input id="letterman" name="new-letterman" />
+	<input name="newmilk" /> -->
+<!-- 9.子元素选择器	<div class="div1">
+		<h1>aaaaaaaaaa</h1>
+		<h1>bbbbbbbbbb</h1>
+		<h1>cccccccccc</h1>
+	</div>
+	<hr>
+	<div class="div2">
+		<h1>dddddddddd</h1>
+		<h1>eeeeeeeeee</h1>
+	</div> -->
+	<!--10.form表单中的提交按钮 <form action="/submit">
+		<input type="button" value="不会提交">
+		<input type="submit" value="提交">
+		<button>会提交</button>
+	</form> -->
+</body>
+<script>
+/*1.
+	$('li').index(document.getElementById('bar'));
+	$('li').index($('#bar'));
+	$('li').index($('li:gt(0)'));
+	$('#bar').index('li');
+	$('#bar').index();
+*/
+/*2.jQuery 生成线上遇到冲突时,要么$ 要么jQuery
+console.log(jQuery)
+*/
+/*3.css()
+	css(name)
+	css({'':""})
+	css(name,function(index,value))
+console.log($('p').css("color"));
+$('p').css({color:"green","background-color":"yellow"});
+*/
+/*4.基础选择器
+$('#hid').css('color',"red");
+$('.hcls').css({color:"green"});
+$('h1').css('background-color','yellow');
+$('h1,p').css({color:"pink"});
+*/
+/*5.层级选择器
+			选择的都是后面那个 E  F 选的都是F
+			 > ~ +都是修饰F
+$('.div1 h1').css('color','red');
+$('.div1 > h1').css('color','green');
+$('.div1~h1').css('color','blue');
+$('.div1+h1').css('color','yellow');
+*/
+/*6.基本选择器
+		修饰前面的元素的
+$('li:first').css('color','red');//只找到第一个元素,只找到一个
+$('li:last').css('color','green');
+$('li:not(:first)').css('color','blue');//只找到最后一个
+$('li:even').css('color','yellow');//偶数,从下标为0开始算
+$('li:odd').css('color','pink');
+$('li:eq(2)').css('color','#000');
+$('li:gt(0)').css('color','#ccc');
+$('li:lt(3)').css('color','#000')
+*/
+/*7.内容选择器
+$('div:has(p)').css('color','red');
+$('div:parent').css('color','green');
+$('div:empty').html('xxxxxx')
+*/
+/*8.属性选择器
+$('div[id]').html('mnoprstuvw')
+//$('input[name="newsletter"]').attr("checked", true);
+//$('input[name!="newsletter"]').attr("checked",true);
+$('input[name^="l"]').attr('checked','true');
+$('input[name$="y"]').attr('checked','true');
+$('input[name*="man"]').attr('checked','true');
+$('input[id][name$="man"]').attr('value','yes');//同时满足多个条件
+*/
+/*9.子元素选择器
+$('h1:first').css('color','red');
+$('div h1:first-child').css('color','green');//找到每一个div 第一个h1
+$('h1:last').css('color','yellow');
+$('h1:last-child').css('color','pink');
+$('div h1:nth-child(2)').css('color','blue');//从1开始的,每一个div里....
+$('div h1:only-child')
+*/
+
+</script>
+</html>
