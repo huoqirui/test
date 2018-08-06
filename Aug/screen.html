@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>screen</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+<!-- 1.过滤选择器	<div>
+	<h1>00001</h1>
+	<h1>00002</h1>
+	<h1>00003</h1>
+	<h1>00004</h1>		
+</div>
+<div>
+	<h1>00001</h1>
+	<h1>00002</h1>
+	<h1>00003</h1>
+	<h1>00004</h1>		
+</div>
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p> -->
+<!-- <p>Hello</p> -->
+<!-- <span>Hello Again</span> -->
+<!-- <p>Hello</p>
+<p><span id="a">Hello Again</span></p> -->
+<!-- <div>
+	<p>First Paragraph</p>
+	<p>Second Paragraph</p>
+</div> -->
+<!-- <div>
+	<h1>aaaaaaaaa</h1>
+	<h1>aaaaaaaaa</h1>
+</div>
+<h1>bbbbbbbbbbbbbbbbb</h1> -->
+<div class="div1">
+	<h1>aaaaaaaaaaaaa</h1>
+	<h1>aaaaaaaaaaaaaa</h1>
+	<div class="div2">
+		<h1>bbbbbbbbbbbbb</h1>
+		<h1>bbbbbbbbbbbbb</h1>
+	</div>
+</div>
+</body>
+<script>
+/*1.筛选之过滤选择器
+	$('h1:eq(0)').css({"color":'red'});
+	$('h1').eq(0).css({"color":'green'});
+	$('h1:not(h1:eq(0))').css({"color":'blue'});
+	$('h1').not($('h1').eq(0)).css({"color":'pink'});
+	$('h1:first').css({"color":'#ccc'})
+	$('h1').first().css({"color":'#999'})
+	$('h1').last().css({"color":'yellow'});
+	$('h1:first-child').css({"color":'blue'});
+	$('p').slice(0,1).wrapInner("<b></b>");
+	$('p').slice(0,2).css({"color":'red'});
+*/
+/*2.add()选择器
+// $('p').add('span').css("color",'red');
+// $('p').add('<span>Again</span>');
+$('p').add(document.getElementById("a"));
+*/
+//$('div').find('p').addClass("border");//不加addSelf()找到的是P
+//$('div').next().andSelf()
+$('.div1').click(function(){
+	$(this).children('h1').css('color','blue');
+});
+</script>
+</html>

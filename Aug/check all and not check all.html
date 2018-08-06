@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>check all and not check all</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<dl>
+		<dt>选择爱好</dt>
+		<dl><input type="checkbox" name="basketball" id="">打篮球</dl>
+		<dl><input type="checkbox" name="football" id="">踢足球</dl>
+		<dl><input type="checkbox" name="swim" id="">去游泳</dl>
+		<dl><input type="checkbox" name="code" id="">写代码</dl>
+		<dl><input type="checkbox" name="novel" id="">看小说</dl>
+		<dl><input type="checkbox" name="diary" id="">写日记</dl>
+		<dl><input type="checkbox" name="tour" id="">去旅游</dl>
+		<dl><input type="checkbox" name="drawing" id="">学绘画</dl>
+	</dl>
+	<input type="button" value="全选"name="all_check">
+	<input type="button" value="全不选"name="not_all_check">
+	<input type="button"value="反选"name="reverse">
+	<input type="button" value="点击挪走"name="move">
+	<hr>
+	<div class="info"></div>
+</body>
+<script>
+	$('input[name="all_check"]').click(function(){
+		$('input:checkbox').attr({"checked":true});
+
+	});
+	$('input[name="not_all_check"]').click(function(){
+		$('input:checkbox').attr({"checked":false});
+	});
+	$('input[name="reverse"]').click(function(){
+		$('input:checkbox').each(function(){
+			//过程式判断
+			//state=$(this).attr('checked')//判断每一个checked状态
+			//if(state){//真则
+				//$(this).attr({"checked":false});
+			//}else{//假则
+				//$(this).attr({"checked":true});
+			//}
+			this.checked=!this.checked;
+		});
+		
+	});
+	$('input[name="move"]').click(function(){
+		$(':checked').parent().appendTo('.info');
+	});
+</script>
+</html>
