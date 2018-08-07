@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> </title>
+	<style>	</style>
+</head>
+<body>
+<div id="content">
+	<p>This is a <strong>paragraph</strong>with a list following it.</p>
+	<ul>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ul>
+</div>	
+</body>
+<script>
+	var oDiv=document.getElementById('content');
+	console.log(oDiv.outerHTML);//返回的是字符串
+	//oDiv.innerHTML='<input type="button" value="innerHTML">';//替换掉了整个一大块html()
+	//console.log(oDiv.outerText);//返回字符串
+	//oDiv.innerText="Hello world!";
+</script>
+</html>

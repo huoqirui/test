@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>properties</title>
+	<script src="../jquery.min.js"></script>
+	<style>
+.style{
+	border: 1px solid #000;
+	background-color: yellow;
+	height: 200px;
+}
+	</style>
+</head>
+<body>
+	<!-- 1.attr()属性<img src="img/off.png" id="pic"> -->
+	<!-- 2.addClass()<div class="style"></div> -->
+	<!--3.html()访问和设置 <div class="div1">
+		<img src="img/off.png" alt="">
+		<img src="img/off.png" alt="">
+		<img src="img/off.png" alt="">
+	</div>
+	<button>>></button>
+	<hr>
+	<div class="div2">
+		
+	</div> -->
+	<!-- 4.表单元素值的获取val()<p>
+		<input type="text">
+	</p>
+	<p>
+		<button>>>>></button>
+	</p>
+	<p>
+		<input type="text">
+	</p> -->
+	<!-- 5.clone()克隆且选中<b>Hello</b><p>how are you?</p> -->
+	<!-- 6.clone(true)<button>Clone Me!</button> -->
+	<p>I would like to say:</p>
+	<p>I want liurui to say:</p>
+	<div></div>
+	<div></div>
+</body>
+<script>
+/*1.attr()比this.src好
+		if语句this.src出的是路径
+		$().attr('src')好
+		建议使用$().attr({})
+	var oImg=document.getElementById('pic');
+	console.log(oImg.src);
+	console.log($('img').attr('src'));
+*/
+/*2.addClass()
+			css属性添加加的是嵌入样式
+//$('.style').css({border:"1px solid #000","background-color":'red',height:'200px'});//加的是行间样式
+$('.style').addClass('.style');//加嵌入样式
+//removeClass()删除样式
+*/
+/*3.html()访问第一个匹配元素
+		html(value)设置每一个
+$('button').click(function(){
+	val=$('.div1').html();//访问html()
+	$('.div2').html(val);//设置html(val)
+});
+*/
+/*4.表单元素值获取val()
+$('button').click(function(){
+	val=$('input').eq(0).val();
+	$('input').eq(1).val(val);
+});
+*/
+/*5.克隆匹配的DOM元素并且选中这些克隆的副本
+	在想把DOM文档元素的副本添加到其他位置时这个函数非常有用
+$('b').clone().prependTo('p');
+*/
+/*6.clone(true)事件都克隆上
+$('button').click(function(){
+	$(this).clone(true).insertAfter(this);
+});
+*/
+/*7.append(content)向每个匹配的元素内部追加内容
+$('p').append("<b>Hello</b>");
+*/
+/*8.appendTo()把所有匹配的元素,追加到另一个指定的元素元素集合中
+$('p').appendTo('div');
+*/
+/*9.prepend(string element jqurey)
+		向每个匹配的元素内部前置内容
+$('p').prepend('<b>Hello</b>');
+*/
+/*10.把所有匹配的元素前置到另一个,指定的元素元素结合中
+$('p').prependTo('div');
+*/
+/*11.after()每个匹配的元素之后插入内容
+	 before()每个匹配的元素之前插入内容
+$('p').after('<b>HELLO</b>')
+*/
+/*12.insertAfter()把所有匹配的元素插入到另一个,指定的元素元素集合中
+$('p').insertAfter('div');
+*/
+</script>
+</html>
