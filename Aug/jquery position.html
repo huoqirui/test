@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery position</title>
+	<script src="../jquery.min.js"></script>
+	<style>
+
+	</style>
+</head>
+<body>
+	<h1>0001</h1>
+	<h1>0002</h1>
+	<h1>0003</h1>
+	<h1>0004</h1>
+	<h1>0005</h1>
+	<h1>0006</h1>
+	<h1>0007</h1>
+	<h1>0008</h1>
+	<h1>0009</h1>
+	<h1>00010</h1>
+	<h1>00011</h1>
+	<h1>00012</h1>
+	<h1>00013</h1>
+	<h1>00014</h1>
+	<h1>00015</h1>
+	<h1>00016</h1>
+	<h1>00017</h1>
+	<h1>00018</h1>
+	<h1>00019</h1>
+	<h1>00020</h1>
+	<h1>00021</h1>
+	<h1>00022</h1>
+	<h1>00023</h1>
+	<h1>00024</h1>
+	<h1>00025</h1>
+	<h1>00026</h1>
+	<h1>00027</h1>
+	<h1>00028</h1>
+	<h1>00029</h1>
+	<h1>00030</h1>
+	
+</body>
+<script>
+/*1.offset()返回对象包含整型属性:top和left.此方法只对可见元素有效
+		    获取匹配元素在当前视口的相对偏移
+		    在当前视口的相对偏移
+	var last=$("p:last");
+	var offset=last.offset();
+	last.html("left:"+offset.left+"top:"+offset.top);
+*/
+/*2.设置offset({top:,left})
+$('p:last').offset({left:30,top:30});
+*/
+/*3.position()相对于父元素的偏移
+	返回整型top left
+var p=$('p:first');
+var position=p.position();
+$('p:last').html("left:"+position.left+"top:"+position.top);
+*/
+/*4.scrollTop()
+		相对于滚动条顶部的偏移
+		为什么是0?
+var one=$('p:first');
+var scroll=one.scrollTop();
+$(window).ready($('p:last').text("top:"+scroll));
+*/
+//$('div.demo').scrollTop(300);
+/*4.
+var p = $("p:first");
+$("p:last").text( "scrollLeft:" + p.scrollLeft() );
+*/
+/*4.文档的总高度
+		chrome和Firefox文档高度不一样
+h=$(document).height();
+alert(h);
+*/
+$(window).scroll(function(){
+	h=$(window).scrollTop();
+	document.title=h;
+})
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>offset position</title>
+	<style>
+.shop{
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+	box-shadow: 0px 0px 5px 5px #ccc;
+	display: inline-block;
+	margin-left: 30px;
+}
+.shop img{
+	width: 100%;
+}
+.pic{
+	position: absolute;
+	border: 10px solid #000;
+	border-radius:50%;
+	overflow: hidden;
+	display: none;
+}
+
+	</style>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<div class="pic">
+		<img src="img/life.jpg" alt="">
+	</div>
+	<div class="shop">
+		<img src="img/pic.jpg" alt="">
+	</div>
+	<div class="shop">
+		<img src="img/pic.jpg" alt="">
+	</div>
+	<div class="shop">
+		<img src="img/pic.jpg" alt="">
+	</div>
+	<div class="shop">
+		<img src="img/pic.jpg" alt="">
+	</div>
+</body>
+<script>
+	//如何知道每个div的坐标,然后根据坐标显示生活图片
+	//首先知道div左上角坐标再加上自身的高度就可以知道生活图片的左上角坐标
+	//offset匹配的元素相对于视口偏移,对象返回left和top
+	$('.shop').mouseenter(function(){//鼠标移上去以后知道这个div的坐标
+		x=$(this).offset().left;
+		y=$(this).offset().top+310;
+		$('.pic').show().css({"top":y,"left":x});
+	});
+</script>
+</html>

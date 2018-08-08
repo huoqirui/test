@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>document process</title>
+	<script src="../jquery.min.js"></script>
+	<style>
+/*div{
+	height: 30px;
+	background-color: #ccc;
+}*/
+img{
+	border: 10px solid #000;
+}
+.size{
+	border: 10px solid #000;
+	width: 80px;
+	height: 80px;
+	padding: 10px;
+}
+	</style>
+</head>
+<body>
+	<!-- 1&2内部插入外部插入<div class="div1">
+		<h1>0000000001</h1>
+		<h1>0000000002</h1>
+		<h1>0000000003</h1>
+		<h1>0000000004</h1>
+	</div>
+	<hr>
+	<div class="div2"></div> -->
+	<!-- 3.wrap	<h1>0000000001</h1>
+		<h1>0000000002</h1>
+		<h1>0000000003</h1>
+		<h1>0000000004</h1> -->
+		<!-- 4.detach() empty() remove()<h1>0000000001</h1>
+		<h1>0000000002</h1>
+		<h1>0000000003</h1>
+		<h1>0000000004</h1> -->
+		<!-- 10.width()height()<img src="img/on.png" alt="">
+		<div class="size"id="box"></div> -->
+		<p class="hi">Hello</p>
+		<p>2nd Paragraph</p>
+</body>
+<script>
+/*1.appendTo(string)目标在后
+	append(string element jquery)//目标在前
+	prepend()
+	prependTo()//目标位置在后
+	$('.div1 h1').click(function(){
+		//$('.div2').append($(this));//追加append(string element jquery)
+		//$(this).appendTo('.div2');//追加到appendTo(string)
+		//$(this).prependTo('.div2');//前追加到
+		//$('.div2').prepend($(this));//前置追加
+	});
+*/
+/*2.insertAfter(sting)
+	insertBefore(stirng)
+	after(string element jquery)
+	before(string element jqurey)
+$('.div1 h1').click(function(){
+	//$(this).insertAfter('.div2');目标位置在后标签后面外部插入
+	//$(this).insertBefore('.div2');
+	//$('.div2').after($(this));//目标位置在前
+	$('.div2').before($(this));//
+});
+*/
+/*3.包裹
+	wrap(html)每一个被包裹
+	wrapAll(html)包裹一次
+	wrapInner(html)目标元素作为包裹层
+//$('h1').wrap('<div></div>');//所以匹配的元素每一个都加标记
+//$('h1').wrapAll('<div></div>');//在所有匹配的元素外只包一次
+$('h1').wrapInner('<div></div>');//内部包裹
+*/
+/*4.替换
+//$('h1').replaceWith('<div>Linux</div>');//替换内容在后面
+//$('<p>php</p>').replaceAll('h1');//替换内容在前面
+*/
+/*5.只换标签不换内容
+$('h1').each(function(){
+	val=$(this).html();
+	$(this).replaceWith("<span>"+val+"</span>");
+});
+*/
+/*6.单击换内容,加事件以后有遍历的效果
+$('h1').click(function(){
+	val=$(this).html();
+	$(this).replaceWith('<p>'+val+'</p>');
+});
+*/
+/*7.empty()标签内容消失
+$('h1').click(function(){
+	//$(this).empty();
+	$(this).html('');
+});
+*/
+/*8.remove()移出标签,这种破坏结构的不常用
+$('h1').click(function(){
+	$(this).remove();
+});
+*/
+/*9.remove()
+		不会把匹配的元素从jQuery对象中删除
+		可以在将来再使用这些匹配的元素,拿一个对象存着
+		除了元素本身得以保留,比如绑定的时间,附加的数据都会被移除
+$('h1').click(function(){
+	obj=$(this).remove();
+	$('body').append(obj);
+});
+*/
+/*10.detach()
+		不会把匹配的元素从jQuery对象中删除,
+		可以在奖励再使用这些元素,用对象保存着
+		与remove()不同,所有绑定的时间,附加的数据等都会保留下来!!!留下来
+$('h1').click(function(){
+	obj=$(this).detach();
+	$('body').append(obj);
+});
+*/
+/*10.width()
+	 height()
+	 innerWidth()
+	 innnerHeight()
+	 outerWidth()
+	 outerHeight()
+// $('img').click(function(){
+// 	width=$(this).width();
+// 	height=$(this).height();
+// 	alert(width);
+// 	alert(height);
+// });
+$('.size').click(function(){
+	width=$(this).outerWidth();
+	height=$(this).outerHeight();
+	console.log(width);
+	console.log(height);
+});
+var oDiv=document.getElementById('box');
+console.log(oDiv.offsetWidth);
+console.log(oDiv.offsetHeight);
+*/
+// w=$(window).width();//可视区域宽==浏览器可视窗口宽度window
+// h=$(window).height();//可视区域高==浏览器可视区域窗口高度
+// console.log(w+'|'+h);
+// totalh=$(document).height();//文档高度document
+// console.log(totalh);
+// $(window).scroll(function(){
+// 	//height=$(window).scrollTop();
+// 	document.title=0;
+// });
+// console.log($(window).scrollTop());
+// var p=$("p:first");
+// var val=$("p:last").text("scrollTop"+$("p:first").scrollTop());
+// alert(val);
+// $(".hi").click(function(){
+// 	alert(0);
+// });
+</html>
