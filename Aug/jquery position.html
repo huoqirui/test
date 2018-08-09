@@ -75,9 +75,14 @@ $("p:last").text( "scrollLeft:" + p.scrollLeft() );
 h=$(document).height();
 alert(h);
 */
+/*5.scrollTop()
+			获取元素相对于滚动条的偏移量
+			可以实现了,估计是缓存的问题
+			兼容性已做到
 $(window).scroll(function(){
 	h=$(window).scrollTop();
 	document.title=h;
 })
+*/
 </script>
 </html>

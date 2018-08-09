@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jiuxian</title>
+	<style>
+	body{
+		margin: 0;
+	}
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	dd{
+		margin: 0;
+	}
+	dd{
+		padding: 0;
+	}
+	h3{
+		margin: 0;
+		font-weight: normal;
+		font-size: 1em;
+	}
+	dl{
+		margin: 0;
+	}
+	.wrap{
+		width: 1024px;
+		margin: 0 auto;
+	}
+.top{
+	margin-left: -228px;
+	overflow: hidden;
+}
+.bg{
+	height: 470px;
+	overflow: hidden;
+	background-color: pink;
+}
+/*背景轮播图*/
+.pic{
+	white-space:nowrap;
+
+}
+.pic li{
+	display: inline-block;
+	margin-left: -280px;
+}
+.pic li img{
+	vertical-align:top;
+}
+/*轮播按钮*/
+.imgBtn{
+	position: absolute;	
+	margin-top: -30px;
+	text-align: center;
+	left: 0;
+	right: 0;
+}
+.btn li{
+	display: inline-block;
+}
+.btn a{
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: #000; 
+	border-radius:50%;
+	color: #fff;
+	text-decoration:none;
+	font-size: 13px;
+}
+.btn a:hover{
+	background-color: red;
+}
+/*商品分类和导航*/
+.allCategory,.navhorizontal,.navhorizontal li{
+	display: inline-block;
+}
+
+.nav{
+	background-color: #990000;
+
+}
+.nav a{
+	text-decoration: none;
+	color: #fff;
+}
+/*商品分类*/
+.categoryTitle{
+	background-color: #990000;
+	font-size: 20px;
+}
+.category .categoryTitle a{
+	color: #fff;
+}
+.category .list{
+	position: absolute;
+	width: 200px;
+}
+.list div{
+	background-color: #fff;
+}
+.category{
+	width: 200px;
+}
+.category a{
+	font-size: 0.8em;
+	color: #666;
+}
+.category li{
+	display: inline-block;
+}
+/*横向导航*/
+.navhorizontal {
+	vertical-align:top;
+}
+	</style>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<div class="top">
+		<img src="img/top.jpg">
+	</div>
+	<div class="main">
+		<div class="nav wrap">
+			<!-- 全部商品分类start -->
+			<div class="allCategory">
+				<div class="category">
+					<h3 class="categoryTitle"><a href="">全部商品分类</a></h3>
+					<div class="list">
+						<div class="check">
+							<h3>一键选酒</h3>
+						<ul>
+							<li><a href="">整箱购</a></li>
+							<li><a href="">家乡名酒</a></li>
+							<li><a href="">年份老酒</a></li>
+							<li><a href="">精品酒铺</a></li>
+							<li><a href="">值得买</a></li>
+							<li><a href="">实惠大坛</a></li>
+						</ul>
+					</div>
+					<div class="spirit">
+						<h3>白酒</h3>
+						<ul>				
+							<li><a href="">茅台</a></li>
+							<li><a href="">五粮液</a></li>
+							<li><a href="">剑南春</a></li>
+							<li><a href="">汾酒</a></li>
+							<li><a href="">浓香型</a></li>
+							<li><a href="">酱香型</a></li>
+							<li><a href="">贵州</a></li>
+							<li><a href="">四川</a></li>
+						</ul>
+					</div>
+					<div class="wine">
+						<h3>葡萄酒</h3>
+						<ul>
+							<li><a href="">法国</a></li>
+							<li><a href="">澳大利亚</a></li>
+							<li><a href="">西班牙</a></li>
+							<li><a href="">中国</a></li>
+							<li><a href="">茉莉花</a></li>
+							<li><a href="">丁戈树</a></li>
+						</ul>
+					</div>
+					<div class="foreign">
+						<h3>洋酒</h3>
+						<ul>							
+							<li><a href="">马爹利</a></li>
+							<li><a href="">白兰地</a></li>
+							<li><a href="">人头马</a></li>
+							<li><a href="">轩尼诗</a></li>
+							<li><a href="">百龄坛</a></li>
+						</ul>
+					</div>
+					<div class="millet">
+						<h3>啤酒/黄酒/养生酒</h3>
+						<ul>
+							<li><a href="">艾丝伯爵</a></li>
+							<li><a href="">青岛</a></li>
+							<li><a href="">1644</a></li>
+							<li><a href="">劲酒</a></li>
+							<li><a href="">猎鹰</a></li>
+							<li><a href="">虎狮争霸</a></li>
+						</ul>						
+					</div>
+					<div class="tea">
+						<h3>食尚</h3>
+						<ul>
+							<li><a href="">茶叶</a></li>
+							<li><a href="">西湖龙井</a></li>
+							<li><a href="">茶/茶具</a></li>
+						</ul>
+					</div>
+					</div>
+					
+				</div>
+			</div>
+			<!-- 全部商品分类end -->
+			<!-- 横向导航start -->
+			<div class="navhorizontal">
+				<ul>
+					<li><a href="">首页</a></li>
+					<li><a href="">领券中心</a></li>
+					<li><a href="">值得买</a></li>
+					<li><a href="">葡萄酒馆</a></li>
+					<li><a href="">洋酒馆</a></li>
+					<li><a href="">酒仙甄选</a></li>
+					<li><a href="">清仓</a></li>
+					<li><a href="">新品</a></li>
+					<li><a href="">CLUB会员</a></li>
+				</ul>
+			</div>
+			<!-- 横向导航end -->
+		</div>
+		<!-- 背景轮播star -->
+		<div class="bg">
+			<!-- 背景图star -->
+			<div class="bgCirculate">
+				<ul class="pic">
+					<li><a href="javascript:;"><img src="img/1.jpg" alt=""></a></li>
+					<li><a href="javascript:;"><img src="img/2.jpg" alt=""></a></li>
+					<li><a href="javascript:;"><img src="img/3.jpg" alt=""></a></li>
+					<li><a href="javascript:;"><img src="img/4.jpg" alt=""></a></li>
+					<li><a href="javascript:;"><img src="img/5.jpg" alt=""></a></li>
+					<li><a href="javascript:;"><img src="img/6.jpg" alt=""></a></li>
+					<li><a href="javascript:;"><img src="img/7.jpg" alt=""></a></li>
+					<li><a href="javascript:;"><img src="img/8.jpg" alt=""></a></li>
+				</ul>
+			</div>
+			<!-- 背景图end -->
+			<!-- 轮播按钮star -->
+			<div class="imgBtn">
+				<ul class="btn">
+					<li><a href="javascript:;">1</a></li>
+					<li><a href="javascript:;">2</a></li>
+					<li><a href="javascript:;">3</a></li>
+					<li><a href="javascript:;">4</a></li>
+					<li><a href="javascript:;">5</a></li>
+					<li><a href="javascript:;">6</a></li>
+					<li><a href="javascript:;">7</a></li>
+					<li><a href="javascript:;">8</a></li>
+				</ul>
+			</div>
+			<!-- 背景按钮end -->
+		</div>
+	<!-- 背景轮播end -->
+	</div>
+</body>
+<script>
+	
+</script>
+</html>
