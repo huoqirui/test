@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>drag</title>
+	<style>
+.box{
+	position: absolute;
+	width: 256px;
+	height: 256px;
+	border-radius:50%;
+	overflow: hidden;
+}
+	</style>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<img src="img/life.jpg" alt="">
+	</div>
+</body>
+<script>
+	function drag(obj){
+		obj.bind('mousedown',start);//鼠标单击事件
+		function start(event){
+			deltaX=event.clientX-obj.offset().left;//点击坐标x
+			deltaY=event.clientY-obj.offset().top;//点击坐标y
+			$(document).bind('mousemove',move);
+			$(document).bind('mouseup',stop);
+			return false;
+		}
+		function move(){
+			obj.css({
+				"left":(event.clientX-deltaX)+"px",
+				"top":(event.clientY-deltaY)+"px"
+			});
+			return false;
+		}
+		function stop(){
+			$(document).unbind("mousemove",move);
+			$(document).unbind("mouseup",stop);
+		}
+	}
+	obj=$('.box');
+	drag(obj);
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>define right menu</title>
+	<style>
+ul{
+	list-style: none;
+	background-color: #ccc;
+	width:120px;
+	position: absolute;
+	display: none;
+}
+	</style>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<ul>
+		<li>第一阶段</li>
+		<li>第二阶段</li>
+		<li>第三阶段</li>
+		<li>第四阶段</li>
+	</ul>
+</body>
+<script>
+	$(document).contextmenu(function(event){
+		btn=event.button;
+		x=event.clientX;
+		y=event.clientY;
+		if(btn==2){
+			$('ul').show().css({"left":x+'px',"top":y+'px'});
+			return false;
+		}
+	});
+</script>
+</html>

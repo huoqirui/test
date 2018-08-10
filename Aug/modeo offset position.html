@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>verify form</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<input type="button"value="测试左右键"id="btn">
+</body>
+<script>
+	 var oBtn=document.getElementById('btn');
+	 oBtn.onmousedown=function(){
+	 	console.log(event.button);
+	 };
+</script>
+</html>
