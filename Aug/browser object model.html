@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>browser object model</title>
+	<style>
+.box{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	background-color: red;
+	display: none;
+}
+#div1,#div2,#div3{
+	padding: 40px;
+}
+#div1{
+	background-color: red;
+}
+#div2{
+	background-color: green;
+}
+#div3{
+	background-color: blue;
+}
+	</style>
+	<script src="../jquery.min.js"></script>
+</head>
+<body style="height:1800px">
+	<input type="button" value="打开新窗口按钮">
+	<input type="button" value="浏览器信息">
+	<input type="text"value="请输入内容">
+	<textarea name="input" id="text" cols="30" rows="10"></textarea>
+	<!-- <div class="box"></div> -->
+	<div id="div1">
+		<div id="div2">
+			<div id="div3"></div>
+		</div>
+	</div>
+	<input type="button"value="事件冒泡行为">
+	<div class="box"></div>
+</body>
+<script>
+/*1.open()和close()
+	$('input:button').click(function(){
+		//window.open();//2个参数,第一个要打开的url,第二个以何种方式打开
+		//window.open('http://www.baidu.com','_blank');//接收2个参数
+		opener=window.open();
+		opener.document.body.style.background='blue';//返回一个新窗口的对象
+	});
+*/
+/*2.navigator浏览器信息一般用来判断识别浏览器
+	location浏览器地址栏信息hash href search
+$('input:eq(1)').click(function(){
+	console.log(window.location.search);
+});
+*/
+/*3.滚动条是哪个元素产生的问题
+	chrome认为是body元素,所以document.body.scrollTop
+	IE,FireFox认为是html元素,所以document.documentElement
+$(window).click(function(){
+	document.title=document.documentElement.scrollTop||document.body.scrollTop;
+});
+*/
+//当获取焦点时,value是"请输入内容"清空让用户输入内容
+	//再次获取焦点时,内容不是"请输入内容",则保保持原有输入内容(输入内容错了要修改)
+/*4.focus事件和blur事件
+$('input:text').focus(function(){
+	if(this.value =="请输入内容"){
+		this.value='';
+	}
+});
+//失去焦点时,用户没有输入内容,内容是空则设置成请输入内容
+$('input:text').blur(function(){
+	if(this.value==""){
+		this.value="请输入内容";
+	}
+});
+*/
+/*4.focus()自动获取焦点方法是JS的方法
+//$('input:text').get().focus();
+//$('textarea').focus();
+var oText=document.getElementById('text');
+console.log(oText);
+oText.focus();//要用js对象的这个方法,因为focus()跟jQuery重复
+*/
+/*5.get()取得所有匹配的DOM元素集合
+	get(index)取得其中一个匹配的元素
+	转成DOM元素,一定要选第几个
+$('input:text').get(0).focus();
+*/
+/*6.事件对象event在不同浏览器中的兼容问题
+		事件对象包含事件发生时很多详细信息
+$(window).click(fn1);
+function fn1(ev){
+	console.log(event);
+	console.log(ev);
+}
+*/
+/*7.兼容Firefox浏览器中不支持event的情况
+$(window).click(fn1);
+function fn1(ev){
+	//console.log(ev);//标准模式下事件对象
+	var ev=ev || event;
+	console.log(ev);//兼容Firefox浏览器
+}
+*/
+/*8.遍历for in  事件对象的所以属性
+$(window).click(fn1);
+function fn1(ev){
+	var ev=ev || event;
+	for(attr in ev){//遍历属性打印每一个属性名
+		console.log(attr+"="+ev[attr]);//属性
+	}
+}
+*/
+/*9.鼠标在可视区坐标clientX clientY
+		在页面坐标pageX pageY
+		在屏幕坐标screenX screenY
+$(window).click(fn1);
+function fn1(ev){
+	var ev=ev || event;
+	console.log(ev.clientX);
+	console.log(ev.pageX);
+	console.log(ev.screenX);
+}
+*/
+/*9.首屏
+		clientX   clientY可视区域鼠标的坐标
+		移动元素的坐标是页面上的坐标,所以一旦有滚动条,则要加上滚动条
+$(window).mousemove(function(ev){
+	var ev= ev||event;
+	x=ev.pageX;//首屏的情况下pageX和pageY跟clientX和clientY一样
+	y=ev.pageY;
+	$('.box').css({"left":x+'px',"top":y+'px'});
+
+});
+*/
+/*9.
+$(window).mousemove(function(){
+	var ev=ev||event;
+	x=ev.clientX+(document.body.scrollLeft||document.documentElement.scrollLeft);
+	y=ev.clientY+(document.body.scroolTop||document.documentElement.scrollTop);
+	$('.box').css({"left":x+"px","top":y+"px"});
+});
+*/
+/*10.事件默认有冒泡行为
+ 		事件是事件
+ 		事件函数是事件函数
+ 		事件函数绑定给某个事件
+ 		so注销某个事件函数,不影响事件冒泡
+$('div').click(function(){
+	console.log(this.id);
+});
+*/
+$('input:button').eq(2).click(function(ev){
+	$('.box').show();
+	var ev=ev||event;
+	ev.cancelBubble=true;
+	ev.stopPropagation();
+
+});
+$(document).click(function(){//事件会冒泡点击事件被触发,冒泡到这儿,会触发这个事件
+	
+		$('.box').hide();
+	
+	
+});
+</script>
+</html>

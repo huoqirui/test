@@ -27,17 +27,17 @@
 			deltaY=event.clientY-obj.offset().top;//点击坐标y
 			$(document).bind('mousemove',move);
 			$(document).bind('mouseup',stop);
-			return false;
+			return false;//阻止冒泡行为
 		}
 		function move(){
 			obj.css({
 				"left":(event.clientX-deltaX)+"px",
 				"top":(event.clientY-deltaY)+"px"
 			});
-			return false;
+			return false;//当事件触发的时候单纯的触发
 		}
 		function stop(){
-			$(document).unbind("mousemove",move);
+			$(document).unbind("mousemove",move);//解除绑定
 			$(document).unbind("mouseup",stop);
 		}
 	}
