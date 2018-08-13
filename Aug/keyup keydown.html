@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>keydown keyup</title>
+	<style>
+.block{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: absolute;
+}
+	</style>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<!-- <input type="text">
+	<ul></ul> -->
+<!-- toggole	<h1>php</h1>
+	<p>phphphpphphphpphphphpphphphpphphphpphphphp
+		phphphpphphphpphphphpphphphpphphphpphphphpphph
+		phpphphphpphphphpphphphpphphphpphphphpphphphpphph
+		phpphphphpphphphpphphphpphphphpphphphpphphphp</p>
+	<h1>linux</h1>
+	<p>linuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxl
+		inuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxl
+		inuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinux
+		linuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinux</p>
+	<p id="hide">HELLO</p> -->
+	<!-- <p>Hello</p><p>Hello Again</p>
+	<button>显隐</button> -->
+	<!-- <p>linuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxl
+		inuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxl
+		inuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinux
+		linuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinux</p> -->
+	<!-- <button id="go">Run</button>
+	<div id="block">Hello!</div> -->
+	<!-- <button id="left"> << </button>
+	<button id="right"> >></button>
+	<div class="block"></div>
+	<p>我是有内容的段落</p> -->
+	<img src="img/life.jpg" alt="">
+</body>
+<script>
+/*1.keyCode
+	$('input').keyup(function(){
+		var ev=ev||event;
+		if(this.value!=''){
+			if(ev.keyCode==13&&ev.ctrlKey){
+				$('ul').html('<li></li>');//插入元素
+			$('ul li').html(this.value);//元素的值
+			}
+			
+		}
+	});
+*/
+/*2.取消事件默认行为
+$(document).keydown(function(){
+	return false;
+});    
+document.oncontextmenu=function(){
+	return false;
+};
+*/
+/*3.toggle()
+		切换可见状态
+$('h1').click(function(){
+	$(this).next().toggle();
+})
+*/
+/*4.显示隐藏的元素
+$('P').eq(2).show();
+*/
+/*5.以优雅的动画显示所有匹配的元素,并在显示完成后可选地触发一个回调函数
+$('p').show('slow');
+*/
+/*6.show()可以加表示时间的毫秒数,也可以加关键词
+$('p').show('normal');
+*/
+/*7.完成后回调函数
+$('p').hide('100000',function(){
+	console.log('Animation Done');
+});
+*/
+/*8.toggle(switch)根据switch控制显示还是隐藏,要有数值来辅助
+var num=0;
+$('button').click(function(){
+	$('p').toggle(num%2==0);
+	num++;
+});
+*/
+/*9.slideUp()通过高度变化(向上减小)动态地隐藏所有匹配的元素
+slideDown()通过高度变化,(向下增大)动态地显示所有匹配的元素.
+$('p').slideDown();
+*/
+/*10.fadeIn()fadeOut()淡入淡出
+$('p').fadeOut('slow');
+*/
+/*11.animate(params,)
+$('#go').click(function(){
+	$('#block').animate({
+		"width":"90%",
+		"height":"100%",
+		"fontSize":"10em",
+		"borderWidth":10
+	},1000)
+})
+*/
+// $('#right').click(function(){
+// 	$('.block').animate({
+// 		left:'+50px'
+// 	},'slow');
+// });
+// $('#left').click(function(){
+// 	$('.block').animate({
+// 		left:'-50px'
+// 	},'slow')
+// });
+/*12.animate()
+$('p').animate({
+	height:'toggle',
+	opacity:'toggle'
+},'slow')
+*/
+w=$('img').width();
+h=$('img').height();
+console.log(w+'-'+h);
+</script>
+</html>
