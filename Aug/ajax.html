@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>event another</title>
+	<style>
+.clickme{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+	</style>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<div class="clickme"></div>
+	<hr>
+	<!-- <div class="clickme"></div> -->
+</body>
+<script>
+/*1.live()事件绑定的另一种形式
+	$('.clickme').live('click',function(){
+		console.log('Bound handler called')
+	});
+	$('body').append('<div class="clickme">Another target</div>');//通过js添加.Clickme
+*/
+//不会跳转带值删除,ajax无刷新技术,背后跑一根线,背地里处理掉
+</script>
+</html>
