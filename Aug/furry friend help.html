@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Our Furry Friends Need Your Help</title>
+	<style>
+
+#showfriend {
+	width: 205px;
+	padding: 20px;
+	text-align: center;
+	background-color: #D8B36E;
+	border:1px solid #000;
+}
+#pic{
+	background-color: #D8B36E;
+	padding: 20px;
+	width: 205px;
+	border: 1px solid #000;
+	display: none;
+}
+	</style>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<div id="showfriend">
+		<h2>Show Me the Furry Friend of the Day</h2>	
+	</div>
+	<div id="pic">
+		<img src="img/cat.png" alt="">
+	</div>
+</body>
+<script>
+$(function(){
+	$('#showfriend h2').click(function(){
+		$('img').fadeIn(1000);
+		$('#pic').slideToggle("slow");
+		
+	});
+});
+	
+</script>
+</html>
