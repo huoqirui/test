@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>jump for joy</title>
+	<title>draw a lottery or faffle</title>
 	<style>
 .wrap{
+	display: inline-block;
 	border: 5px solid #000;
-	height: 500px;
 	background-color: grey;
+	height: 500px;
+	text-align: center;
 }
 .box{
 	float: left;
-	
-	overflow: hidden;
 }
 img{
 	border: 3px solid #000;
@@ -34,25 +34,16 @@ img{
 		<div class="box"><img src="img/jump3.jpg" alt=""></div>
 		<div class="box"><img src="img/jump4.jpg" alt=""></div>		
 	</div>
-	<button id="foo">bind测试</button>
+	
 </body>
 <script>
 	$(function(){
-		$('.wrap div').click(function(){
-			$('.box p').remove();//所以p元素都会被删除仅显示当前点击元素的折扣价
+		$('.wrap').one('click',function(){
 			discount=Math.floor(Math.random()*5+5);
-			discount_msg='<p>Your discount is '+discount+"%"+"</p>";
-			$(this).append(discount_msg);//点击当前元素随机数不停的变
-
-		});
+			$(this).append('<div>Your discount is ' +discount+"%"+'</div>');
+			
+		})
 	});
-	
-	// $('#foo').bind('mouseenter mouseleave',function(){
-	// 	$(this).toggleClass('entered');//鼠标移入加上entered类,鼠标移出去掉类
-	// });
-// $('#foo').bind('click',function(event){
-// 	var ev=ev||event;
-// 	console.log(ev.clientX);
-// });
+
 </script>
 </html>

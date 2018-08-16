@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>check code </title>
+	<style>
+.hover{
+	border: 1px solid #f00;
+}
+.no_hover{
+	border: 3px solid #000;
+}
+	</style>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<div id="header"><h1>Header</h1></div>
+	<button id="btn1">Click to Add</button>
+	<button id="btn2">Click to Remove</button>
+</body>
+<script>
+	function getRandom(num){
+		var random=Math.floor(Math.random()*num+1);
+		return random;
+	}
+	var num =getRandom(4);
+	console.log(num);
+	$(function(){
+		$('#btn1').click(function(){
+			$('#header').addClass('hover');
+			$('#header').removeClass('no_hover');
+		});
+		$('#btn2').click(function(){
+			$('#header').removeClass('hover');
+			$('#header').addClass('no_hover');
+		});
+	})
+</script>
+</html>
