@@ -3,8 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>dining</title>
+	<script src="../jquery.min.js"></script>
 </head>
 <body>
+	<div class="topper">
+		<h2>Our Menu</h2>
+		<ul>
+			<li class="nav"><button id="vegOn">Go Vegetarian</button> </li>
+			<li class="nav"><button id="restoreMe">Restore Menu</button></li>
+		</ul>
+	</div>
 	<div id="menu_wrapper">
 		<div class="left_col">
 			<h4>Dinner Entrees</h4>
@@ -12,7 +20,7 @@
 				<li>Thai-style Halibut
 					<ul class="menu_list">
 						<li>coconut milk</li>
-						<li class="meat">pan-friend halibut</li>
+						<li class="fish">pan-friend halibut</li>
 						<li>early autumn vegetables</li>
 						<li>Thai spices</li>
 					</ul>
@@ -28,7 +36,7 @@
 				<li>Southwest Slider
 					<ul class="menu_list">
 						<li>whole chiles</li>
-						<li>hamburger</li>
+						<li class="hamburger">hamburger</li>
 						<li>pepperjack cheese</li>
 						<li>multigrain roll</li>
 					</ul>
@@ -97,4 +105,23 @@
 		</div>
 	</div>
 </body>
+<script>
+	$(function(){
+		$('#vegOn').click(function(){
+			$f=$('li.fish').parent().parent().detach();
+			$('.hamburger').replaceWith("<li class='portobello'><em>Portobello Mushroom</em></li>");
+			$('.meat').after("<li class='tofu'><em>Tofu</em></li>");
+			$m=$('.meat').detach();
+		});
+		$('#restoreMe').click(function(){
+			$('.munu_entrees').prepend($f);
+			$('.portobello').replaceWith("<li class='hamburger'>Hamburger</li>");
+			$('.meat').detach('.tofu');
+			$('.tofu').each(function(i){
+				$(this).after($m[i]);
+			});
+			$('.tofu').remove();
+		});
+	});
+</script>
 </html>
