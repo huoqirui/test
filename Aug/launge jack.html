@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>black jack</title>
+	<style>
+#controls{
+	clear:both;
+}
+#my_hand{
+	border: 1px solid gray;
+	height: 250px;
+	width: 835px;
+}
+h3{
+	display: inline;
+	padding-right:40px ;
+}
+
+	</style>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<div id="main">
+		<h1>Click to reveal you cards</h1>
+		<h3 id="hdrTotal"></h3><h3 id="hdrResult"></h3>
+		<div id="my_hand"></div>
+		<div id="controls">
+			<div id="btnDeal">
+				<img src="img/deck.png" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	$(function(){
+		//card构造函数,用于创建对象
+		function card(name,suit,value){
+			this.name=name;
+			this.suit=suit;
+			this.value=value;
+		}
+		var deck=[new card('Ace','Hearts',1),new card('Two','Hearts',2),new card('Three','Hearts',3),new card('Four','Hearts',4),new card('Five','Hearts',5),new card('Six','Hearts',6),new card('Seven','Hearts',7),new card('Eight','Hearts',8),new card('Nine','Hearts',9),new card('Ten','Hearts',10),new card('Jack','Hearts',11),new card('Queen','Hearts',12),new card('King','Hearts',13),new card('Ace','Diamonds',1),new card('Two','Diamonds',2),new card('Three','Diamonds',3),new card('Four','Diamonds',4),new card('Five','Diamonds',5),new card('Six','Diamonds',6),new card('Seven','Diamonds',7),new card('Eight','Diamonds',8),new card('Nine','Diamonds',9),new card('Ten','Diamonds',10),new card('Jack','Diamonds',11),new card('Queen','Diamonds',12),new card('King','Diamonds',13),new card('Ace','Clubs',1),new card('Two','Clubs',2),new card('Three','Clubs',3),new card('Four','Clubs',4),new card('Five','Clubs',5),new card('Six','Clubs',6),new card('Seven','Clubs',7),new card('Eight','Clubs',8),new card('Nine','Clubs',9),new card('Ten','Clubs',10),new card('Jack','Clubs',11),new card('Queen','Clubs',12),new card('King','Clubs',13),new card('Ace','Spades',1),new card('Two','Spades',2),new card('Three','Spades',3),new card('Four','Spades',4),new card('Five','Spades',5),new card('Six','Spades',6),new card('Seven','Spades',7),new card('Eight','Spades',8),new card('Nine','Spades',9),new card('Ten','Spades',10),new card('Jack','Spades',11),new card('Queen','Spades',12),new card('King','Spades',13)];
+		var haystack=new Array('hay','mouse','neeld','pitchfork');
+		var needle_index=$.inArray('needle',haystack);
+		var len=deck.length;//数组长度
+		var ran=Math.floor(Math.random()*len);//随机数
+		var ran_value=deck[ran].value;//随机数组值
+		console.log(ran_value);
+		for(var i=0;i<deck.length;i++){
+			
+		}
+		var used_cards=new Array();//创建一个数组,用来保存用过的扑克牌
+		function deal(){
+			for(var i=0;i<2;i++){
+				hit();
+			}
+		}
+		//得到一个随机数
+		function getRandom(num){
+			var my_num=Math.floor(Math.random()*num);
+			return my_num;
+		}
+		function hit(){
+			var good_card=false;
+			do{
+				var index=getRandom(52);//出牌的索引值
+				//检测这张牌是否用过
+				if(!$.inArray(index,used_cards)>-1){
+					good_card=true;
+					var c=deck[index];//从deck数组中取牌
+					used_cards[used_cards.length]=index;
+					hand.cards[hand.cards.length]=c;
+					var $d=$("div");
+					$d.addClass("current hand").appendTo("#my_hand");
+					$("<img>").appendTo($d).attr('src','img/cards/+c.suit+'/'+c.name+'.jpg').fadeOut('slow').fadeIn('slow);
+				}
+			}
+		}
+	});
+</script>
+</html>

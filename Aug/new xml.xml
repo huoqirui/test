@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<books>
+	<book>
+		<title>The Hitchhikers Guide to the Galaxy</title>
+		<author>Douglas Adams</author>
+		<year>1980</year>
+	</book>
+	<book>
+		<title>The Color of Magic</title>
+		<author>Terry Pratchett</author>
+		<year>1983</year>
+	</book>
+	<book>
+		<title>And Another thing</title>
+		<author>Eoin Colfer</author>
+		<year>2009</year>
+	</book>
+</books>

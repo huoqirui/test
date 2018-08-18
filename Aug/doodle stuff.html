@@ -8,6 +8,7 @@
 	width: 545px;
 	height: 600px;
 	border: 50px solid #000;
+	position: absolute;
 }
 .pic_box{
 	width: 376px;
@@ -39,8 +40,8 @@
 <body>
 	<div class="container">
 		<img src="img/lightning.jpg" class="lightning"id="lightning1">
-		<img src="img/lightning2.jpg" class="lightning" id="lightning2">
-		<img src="img/lightning3.jpg" class="lightning" id="lightning3">
+		<!-- <img src="img/lightning2.jpg" class="lightning" id="lightning2"> -->
+		<!-- <img src="img/lightning3.jpg" class="lightning" id="lightning3"> -->
 		<div id="frame">
 			<div class="pic_box">
 				<div class="head face"><img src="img/headsstrip.png" alt=""></div>
@@ -55,9 +56,9 @@
 <script>
 	$(function(){
 		num=1;//应写在函数外部
-		lightning_one(4000);
-		lightning_two(5000);
-		lightning_three(7000);
+		// lightning_one(4000);
+		// lightning_two(5000);
+		// lightning_three(7000);
 		$('.head').click(function(){			
 			if(num<9){					
 				$(this).children().css({'left':-376*num});
@@ -94,18 +95,18 @@
 				$(this).children().css({'left':-376*num});
 			}
 		});
-		function lightning_one(t){
+		function  (t){
 			$('#lightning1').fadeIn(250).fadeOut(250);
 			setTimeout(lightning_one(),t);
 		}
-		function lightning_two(t){
-			$('#lightning2').fadeIn(250).fadeOut(250);
-			setTimeout(lightning_two(),t);
-		}
-		function lightning_three(t){
-			$('#lightning2').fadeIn(250).fadeOut(250);
-			setTimeout(lightning_three(),t);
-		}
+		// function lightning_two(t){
+		// 	$('#lightning2').fadeIn(250).fadeOut(250);
+		// 	setTimeout(lightning_two(),t);
+		// }
+		// function lightning_three(t){
+		// 	$('#lightning2').fadeIn(250).fadeOut(250);
+		// 	setTimeout(lightning_three(),t);
+		// }
 	})
 </script>
 </html>
