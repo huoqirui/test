@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form</title>
+	<link rel="stylesheet" href="script/jquery-ui-1.11.4.custom/jquery-ui.css">
+	<script src="../jquery.min.js"></script>
+	<script src="script/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+</head>
+<body>
+	<input type="text"name="slighting_date"id="datepicker">
+	<div id="new">
+		<h4>Add New Finisher</h4>
+		<form action="service.php"name="addRunner"id="addRunner">
+			First Name: <input type="text"name="txtFirstName" id="txtFirstName"> <br>
+			Last Name: <input type="text"name="txtLastName"id="txtLastName"><br>
+			Genner: <select name="ddlGender" id="ddlGender">
+				<option value="">--Please Select--</option>
+				<option value="f">Female</option>
+				<option value="m">Male</option>
+			</select><br>
+			Finish Time:
+			<input type="text"name="txtMinutes"id="txtMinutes"size="10"maxlength="2">(Minute)
+			<input type="text"name="txtSeconds"id="txtSeconds"size="10"maxlength="2">(Seconds)
+			<br><br>
+			<button>Add Runner</button>
+			<input type="hidden"name="action"value="addRunner"id="action">
+		</form>
+	</div>
+</body>
+<script>
+	$(function(){
+		$('#datepicker').datepicker();
+	})
+</script>
+</html>
