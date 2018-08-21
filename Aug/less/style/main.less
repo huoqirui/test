@@ -1,0 +1,41 @@
+@charset "utf-8";
+body{
+	
+}
+//变量
+@test_width:300px;
+.box{
+	width:@test_width;
+	height:@test_width;
+	background-color:yellow;
+	.border;//混合
+}
+//纯粹的class混合
+.border{
+	border:5px solid pink;
+}
+//带参数的混合带()
+.border_many(@border_width){
+	border:solid red @border_width;
+}
+.box{
+	.border_many(10px);
+}
+.border_radius(@radius:5px){
+	-webkit-border-radius:@radius;
+	-moz-border-radius:@radius;
+	border-raius:@radius;
+}
+.box{
+	.border_radius();
+}
+//匹配
+.upsanjiao{
+	width:0;
+	height:0;
+	border:10px solid  #f00;
+	border-color:#f00 transparent transparent transparent;
+}
+.up{
+	.upsanjiao;
+}

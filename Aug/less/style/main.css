@@ -1,0 +1,30 @@
+@charset "utf-8";
+.box {
+  width: 300px;
+  height: 300px;
+  background-color: yellow;
+  border: 5px solid pink;
+}
+.border {
+  border: 5px solid pink;
+}
+.box {
+  border: solid #ff0000 10px;
+}
+.box {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-raius: 5px;
+}
+.upsanjiao {
+  width: 0;
+  height: 0;
+  border: 10px solid  #f00;
+  border-color: #f00 transparent transparent transparent;
+}
+.up {
+  width: 0;
+  height: 0;
+  border: 10px solid  #f00;
+  border-color: #f00 transparent transparent transparent;
+}
