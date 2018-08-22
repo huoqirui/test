@@ -8,9 +8,11 @@
 	.container{
 		
 	}
-	.col-md-1{
-		border: 1px solid #000;
-		height: 100px;
+	.col-md-6{
+		border: 1px solid red;
+	}
+	.col-sm-5{
+		border: 1px solid blue;
 	}
 	</style>
 	<link rel="stylesheet" href="../bs/css/bootstrap.css">
@@ -22,22 +24,21 @@
 	<div class="container">
 		<h1>bootstrap前端框架12栅格系统</h1>
 		<div class="row">
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
+			<div class="col-sm-5 col-md-6">col-sm-5 col-md-6</div>
+			<div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-md-5 col-lg-6">col-sm-6 col-md-5 col-lg-6"</div>
+			<div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 clo-lg-offset-0">col-sm-6 col-md-5 col-md-offset-2 col-lg-6 clo-lg-offset-0</div>
 		</div>
 	</div>
+	<div class="alert"></div>
+	<button class="btn">按钮组件</button>
 </body>
 <script>
 	console.log($(window).width());
+	$('.row').click(function(){
+		alert('ok');
+	})
 </script>
 </html>
