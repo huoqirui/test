@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>component</title>
+	<style>
+.dropdown-submenu{
+	position: relative;
+}
+.dorpdown-submenu>.dorpdown-menu{
+	top: 0;
+	left: 100%;
+	margin-top: -6px;
+	border-radius:0 6px 6px 6px;
+}
+	</style>
+	<link rel="stylesheet" href="../bs/css/bootstrap.css">
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+	<script src="../bs/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+	<!-- 1.搜索小图标 -->
+	<i class="glyphicon glyphicon-search"></i>
+	<span class="glyphicon glyphicon-search"></span>
+	<!-- 2.编辑器里的小图标 -->
+	<div class="btn-toolbar">
+		<div class="btn-group">
+			<a href="#" class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span></a>
+			<a href="#" class="btn btn-glyphicon"><span href="" class="glyphicon glyphicon-align-center"></span></a>
+			<a href="" class="btn btn-glyphicon"><span class="glyphicon glyphicon-align-right"></span></a>
+		</div>
+	</div>
+	<!-- 3.可以用在各种元素容器内 -->
+	<div class="btn-group dropdown open">
+		<a href="#" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-user"></span></a>
+		<a href="#" class="btn btn-default btn-primary dropdown-toggle data-toggle"><span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
+			<li><a href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
+			<li><a href="#"><span class="glyphicon glyphicon-ban-circle"></span>Ban</a></li>
+		</ul>
+	</div>
+	<!-- 4.结合btn样式star -->
+	<a href="#" class="btn btn-default btn-large"><span class="glyphicon glyphicon-star"></span>star</a>
+	<a href="#" class="btn btn-default btn-small"><span class="glyphicon glyphicon-star"></span></a>
+	<!-- 5.每个操作菜单前显示代表该菜单的icon -->
+	<ul class="nav nav-pills nav-stacked">
+		<li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+		<li><a href="#"><span class="glyphicon glyphicon-book"></span>Library</a></li>
+		<li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Applications</a></li>
+		<li><a href="#"><span class="glyphicon glyphicon-"></span>Musc</a></li>
+	</ul>
+	<div class="control-group">
+		<div class="controls">
+			<div class="input-group">
+				<span class="input-group-addon">
+				<span class="glyphicon glyphicon-envelope"></span>
+				</span>
+			</div>
+		</div>		
+	</div>
+	<!-- 6.dropdown应用在父元素上 dorpdown-menu-->
+	<div class="dropdown">
+		<button class="btn btn-default dropdown-toggle" id="dropdownMenu1"type="button"data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Dropdown <span class="caret"></span></button>
+		<ul class="dropdown-menu"aria-labelledby="dorpdownMenu1">
+			<li><a href="#">Action</a></li>
+			<li><a href="#">Another action</a></li>
+			<li><a href="#">Something else here</a></li>
+			<li role="separator"class="divider"></li>
+			<li><a href="#">Separted link</a></li>
+		</ul>
+	</div>
+		<div class="dropdown">
+	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	    Dropdown
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	    <li><a href="#">Action</a></li>
+	    <li><a href="#">Another action</a></li>
+	    <li><a href="#">So</a></li></ul>
+		</div>
+		<!-- 7下拉菜单之禁用菜单激活菜单 -->
+	<div class="dropdown open clearfix">
+		<ul class="dropdown-menu">
+			<li class="dropdown-header">翻译图书</li>
+			<li role="presentation"><a href="#"tabindex="-1" fole="menuitem">JavaScript编程精讲</a></li>
+			<li class="active"><a href="#"role="menuitem">JavaScript设计模式</a></li>
+			<li class="disabled"><a href="javascript:;">js启示录</a></li>
+		</ul>
+	</div>
+	<div class="open"style="position:relative">二级菜单
+	<ul class="dropdown-menu">
+		<li class="dropdown-submenu pull-left">
+			<a href="#">MOre options</a>
+			<ul class="dropdown-menu">
+				<li><a href="#">二级菜单</a></li>
+				<li><a href="#">二级菜单</a></li>
+				<li><a href="#">二级菜单</a></li>
+				<li><a href="#">二级菜单</a></li>
+				<li><a href="#">二级菜单</a></li>
+			</ul>
+		</li>
+	</ul>
+	</div>
+</div>
+</body>
+</html>
