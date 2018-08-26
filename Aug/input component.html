@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>component</title>
+	<link rel="stylesheet" href="../bs/css/bootstrap.css">
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+	<script src="../bs/js/bootstrap.js"></script>
+</head>
+<body>
+	<!-- 1.输入框租 -->
+	<div class="input-group">
+		<span class="input-group-addon">$</span>
+		<input type="text"class="form-control">
+		<span class="input-group-addon">.00</span>
+	</div>
+	<div class="input-group">
+		<span class="input-group-addon glyphicon glyphicon-apple"></span>
+		<input type="text"class="form-control">
+	</div>
+	<!-- 2.单复选框作为addon -->
+	<div class="row">
+		<div class="col-lg-3">
+			<div class="input-group">
+				<span class="input-group-addon"><input type="checkbox"></span>
+				<input type="text" class="form-control">
+			</div>
+		</div>
+		<div class="col-lg-3">
+			<div class="input-group">
+				<span class="input-group-addon"><input type="radio"></span>
+				<input type="text" class="form-control">
+			</div>
+		</div>
+	</div>
+	<!-- 3.input-group-btn按钮作为addon -->
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="input-group">
+				<span class="input-group-btn"><button class="btn btn-default">Go!</button></span>
+				<input type="text" class="form-control">
+			</div>
+		</div>
+		<div class="con-lg-6">
+			<div class="input-group">
+				<input type="text" class="form-control">
+				<span class="input-group-btn"><button class="btn btn-default">Go!</button></span>
+			</div>
+		</div>
+	</div>
+	<!-- 4.下拉菜单作为addon -->
+	<div class="row">
+		<div class="col-lg-2">
+			<div class="input-group">
+				<span class="input-group-btn"data-toggle="dropdown"><button class="btn btn-default">Action <span class="caret"></span></button></span>
+				<ul class="dropdown-menu">
+					<li><a href="#">action</a></li>
+					<li><a href="#">action</a></li>
+					<li><a href="#">action</a></li>
+				</ul>
+				<input type="text" class="form-control">
+			</div>
+		</div>
+	</div>
+	<!-- 5.分段按钮作为addon -->
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="input-group">
+				<div class="input-group-btn">
+					<button class="btn btn-default">按钮A</button>
+					<button data-toggle="dropdown"class="btn btn-default dropdown-toggle">
+						<span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
+					</button>
+				</div>
+				<input type="text" class="form-control">
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

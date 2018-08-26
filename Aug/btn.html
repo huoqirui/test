@@ -41,5 +41,65 @@
 		<button class="btn btn-default">Middle</button>
 		<button class="btn btn-default">Right</button>
 	</div>
+	<!-- 3.嵌套分组btn-group dorpdown -->
+	<div class="btn-group">
+		<button class="btn btn-default">首页</button>
+		<button class="btn btn-default">个人简介</button>
+		<button class="btn btn-default">作品</button>
+		<div class="btn-group">
+			<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">图书<span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="JavaScript:;">js编程讲解</a></li>
+				<li><a href="JavaScript:;">js编程讲解</a></li>
+				<li><a href="JavaScript:;">js编程讲解</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 4.垂直分组 -->
+	<div class="btn-group-vertical">
+		<button class="btn btn-default">首页</button>
+		<button class="btn btn-default">个人简介</button>
+		<button class="btn btn-default">作品</button>
+		<div class="btn-group">
+			<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">图书作品<span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">编程精讲</a></li>
+				<li><a href="#">编程精讲</a></li>
+				<li><a href="#">编程精讲</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 5.自适应分组 table table-cell btn-group-justified-->
+	<div class="btn-group btn-group-justified">
+		<a href="#" class="btn btn-default">左</a>
+		<a href="#" class="btn btn-default">中</a>
+		<a href="#" class="btn btn-default">右</a>
+	</div>
+	<!-- 6.组合式按钮 -->
+	<div class="btn-group">
+		<button class="btn btn-success dropdown-toggle"data-toggle="dropdown">success <span class="caret"></span></button>
+		<ul class="dropdown-menu">
+			<li><a href="#">Active</a></li>
+			<li><a href="#">Another</a></li>
+			<li><a href="#">Something else here</a></li>
+			<li class="divider"></li>
+			<li><a href="#">Separated</a></li>
+		</ul>
+	</div>
+	<!-- 7.分离式下拉菜单 -->
+	<div class="btn-group">
+		<button class="btn btn-success">success</button>
+		<button class="btn btn-default "data-toggle="dropdown"><span class="caret"></span></button>
+		<ul class="dropdown-menu">
+			<li><a href="#">active</a></li>
+		</ul>
+	</div>
+	<div class="btn-group dropup">
+		<button class="btn btn-success">success</button>
+		<button class="btn btn-default "data-toggle="dropdown"><span class="caret"></span></button>
+		<ul class="dropdown-menu">
+			<li><a href="#">active</a></li>
+		</ul>
+	</div>
 </body>
 </html>

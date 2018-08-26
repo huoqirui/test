@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nav</title>
+
+	<link rel="stylesheet" href="../bs/css/bootstrap.css">
+		<style>
+body{
+	padding-top: 70px;
+}
+	</style>
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+	<script src="../bs/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+	<!-- 1.选项卡导航nav nav-tabs -->
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#">主页</a></li>
+		<li><a href="#">个人信息</a></li>
+		<li class="disabled"><a href="#">作品</a></li>
+		<li><a href="#">图书</a></li>
+	</ul>
+	<!-- 2.nav-pills横向胶囊式 -->
+	<ul class="nav nav-pills">
+		<li class="active"><a href="#">主页</a></li>
+		<li><a href="#">个人信息</a></li>
+		<li class="disabled"><a href="#">作品</a></li>
+		<li><a href="#">图书</a></li>
+	</ul>
+	<!-- 3.堆叠式导航.nav-stacked -->
+	<ul class="nav nav-pills nav-stacked">
+		<li class="active"><a href="#">主页</a></li>
+		<li><a href="#">个人信息</a></li>
+	</ul>
+	<!-- 4.自适应导航.nav-justified -->
+	<ul class="nav nav-pills nav-justified">
+		<li class="active"><a href="#">主页</a></li>
+		<li><a href="#">个人信息</a></li>
+		<li class="disabled"><a href="#">作品</a></li>
+		<li><a href="#">图书</a></li>
+	</ul>
+	<!-- 5.二级导航dropdown -->
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#">主页</a></li>
+		<li><a href="#">个人信息</a></li>
+		<li class="disabled"><a href="#">作品</a></li>
+		<li class="dropdown" ><a href="#" data-toggle="dropdown">图书<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="#">个人信息</a></li>
+		<li class="disabled"><a href="#">作品</a></li>
+		</ul></li>		
+	</ul>
+	<!-- 6.navbar导航条.navbar-default样式.navbar-brand.navbar-form -->
+	<nav class="navbar navbar-default">
+		<div class="navbar-header">
+			<a href="#" class="navbar-brand">Brand</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">active</a></li>
+			<li><a href="#">Link</a></li>
+			<li class="disabled"><a href="#">disabled</a></li>
+			<li><a href="#">Link</a></li>
+		</ul>
+	</nav>
+	<nav class="navbar navbar-defalut">
+		<div class="navbar-header"><a href="#" class="navbar-brand">Brand</a></div>
+		<from class="navbar-form navbar-left">
+			<div class="form-group">
+				<input type="text" placeholder="Search" class="form-control">
+				<button class="btn btn-default">左按钮</button>
+			</div>
+		</from>
+		<from class="navbar-form navbar-right">
+			<div class="form-group">
+				<input type="text" class="form-control"placeholder="Search">
+				<button class="btn btn-default">右按钮</button>
+			</div>
+		</from>
+	</nav>
+	<!-- 7.导航条放置按钮.navbar-btn -->
+	<nav class="navbar navbar-default">
+		<div class="navbar-header"><a href="#" class="navbar-brand">Brand</a></div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">Link</a></li>
+			<li><a href="#">Link</a></li>
+		</ul>
+	</nav>
+	<nav class="navbar navbar-default">
+		<div class="navbar-header"><a href="#" class="navbar-brand">Brand</a></div>
+		<div class="nav navbar-nav">
+			<button class="btn btn-warning navbar-btn">和navbar-brand一起使用的按钮</button>
+			<button class="btn btn-warning navbar-btn">另一个按钮</button>
+		</div>
+	</nav>
+	<nav class="navbar navbar-default">
+		<div class="navbar-header"><a href="#" class="navbar-brand">Brand</a></div>
+		<div class="nav navbar-nav">
+			<button class="btn btn-danger navbar-btn">2个单独按钮A</button>
+			<button class="btn btn-danger navbar-btn">2个单独按钮B</button>
+		</div>
+	</nav>
+	<!-- 8.导航条中的文本按钮 -->
+	<nav class="navbar navbar-default">
+		<div class="navbar-header"><a href="#" class="navbar-brand">Brand</a></div>
+		<div class="nav navbar-nav">
+			<label class="navbar-text">文本A</label>
+			<label  class="navbar-text">文本B</label>
+		</div>
+	</nav>
+	<nav class="navbar navbar-default">
+		<div class="navbar-header"><a href="#"class="navbar-brand">Brand</a></div>
+		<div class="nav navbar-nav">
+			<p class="navbar-text">文本A</p>
+			<p class="navbar-text">文本B</p>
+		</div>
+	</nav>
+	<!-- 9.链接导航 -->
+	<nav class="navbar navbar-default">
+		<div class="navbar-header"><a href="#" class="navbar-brand">Brand</a></div>
+		<div class="nav navbar-nav">
+			<a href="#" class="navbar-link navbar-text">汤姆大叔</a>
+			<a href="#" class="navbar-link navbar-text">汤姆大叔</a>
+		</div>
+	</nav>
+	<nav class="navbar navbar-default">
+		<div class="navbar-header"><a href="#" class="navbar-brand">Brand</a></div>
+		<p class="navbar-text navbar-left">左浮动</p>
+		<p class="navbar-text navbar-right">右浮动</p>
+	</nav>
+	<!--10 导航条顶部固定 -->
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="nav navbar-nav">
+			<a href="#" class="navbar-link navbar-text">汤姆大叔</a>
+			<a href="#" class="navbar-link navbar-text">汤姆大叔</a>
+		</div>
+	</div>
+	<div class="navbar navbar-default">
+		<div class="navbar-header">
+			<button class="navbar-toggle"data-toggle="collapse"data-target=".navbar-responsive-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse navbar-responsive-collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">主页</a></li>
+				<li><a href="#">作品</a></li>
+				<li><a href="#">图书</a></li>
+				<li class="dropdown">
+					<a href="#"data-toggle="dropdown" class="dropdown-toggle">下拉菜单<b class="caret"></b></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>
