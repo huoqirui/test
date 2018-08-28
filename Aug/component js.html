@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>component js</title>
+	<link rel="stylesheet" href="../bs/css/bootstrap.css">
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+	<script src="../bs/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+		1.模态弹窗
+		<button class="btn btn-primary btn-lg"data-toggle="modal"data-target="#mymodal">Launch demo modal</button>
+		<div id="mymodal"></div>
+		2.警告框组件
+		<div class="alert">
+			<button class="close"data-dismiss="alert">&times;</button>
+			<strong>警告!</strong>你输入的项目不合法
+		</div>
+		3.下拉菜单dropdown
+		<div class="btn-group">
+			<button class="btn btn-default dropdown-toggle"data-toggle="dropdown">我的书籍<span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="javascript:;">js编程精解</a></li>
+				<li><a href="javascript:;">js编程精解</a></li>
+				<li><a href="javascript:;">js编程精解</a></li>
+				<li><a href="javascript:;">js编程精解</a></li>
+			</ul>
+		</div>
+		4.选项卡
+		<ul class="nav nav-tabs" id="myTab">
+			<li class="active"><a href="#home"data-toggle="tab">首页</a></li>
+			<li><a href="#profile" data-toggle="tab">个人资料</a></li>
+			<li class="dropdown">
+				<a href="#" data-toggle="dropdown" class="dropdown-toggle">我的书籍<b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="#dropdown1" data-toggle="tab">js精讲1</a></li>
+					<li><a href="#dropdown2" data-toggle="tab">js精讲2</a></li>
+					<li><a href="#dropdown3" data-toggle="tab">js精讲3</a></li>
+					<li><a href="#dropdown4" data-toggle="tab">js精讲4</a></li>
+				</ul>
+			</li>
+		</ul>
+		<div class="tab-content" id="myTabContent">
+			<div id="home" class="tab-pane fade active in">
+				<p>单击首页显示该区域</p>
+			</div>
+			<div id="profile" class="tab-pane fade">
+				<p>单击个人资料显示该区域</p>
+			</div>
+			<div id="dropdown1" class="tab-pane fade">
+				<p>单击js编程精解1</p>
+			</div>
+			<div id="dropdown2" class="tab-pane fade">
+				<p>单击js编程精解2</p>
+			</div>
+			<div id="dropdown3" class="tab-pane fade">
+				<p>单击js编程精解3</p>
+			</div>
+			<div id="dropdown4" class="tab-pane fade">
+				<p>单击js编程精解4</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
