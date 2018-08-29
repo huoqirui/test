@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>why jquery</title>
+</head>
+<body>
+	<img src="img/jump1.jpg" id="pic"><button id="btn">按钮</button>
+</body>
+<script>
+//1.因为想省事儿so衍生出jQuery ,是必然要出现的
+	var oImg=document.getElementById('pic');
+	var oBtn=document.getElementById('btn');
+	oBtn.onclick=function(){
+		oImg.style.display='none';
+	}
+	//通过写一个$()函数来套用以后通过id找对象的方法
+	var $=function(id){
+		return document.getElementById(id);
+	};
+	//$('#pic');//包装器
+	var obj={};
+	obj.name='Nocholsa';
+	var arr=[];
+	arr.length=0;
+	function fn(){}
+	fn.size=0;
+	console.log(obj.__proto__);
+	console.log(arr.__proto__);
+	console.log(fn.__proto__);
+	console.log(fn.prototype);
+	console.log(obj.__proto__===Object.prototype);
+	function Foo(name){
+		this.name=name;
+	}
+	Foo.prototype.alertName=function(){
+		alert(this.name);
+	};
+	var f=new Foo('zhangsan');
+	f.printName=function(){console.log(this.name)};
+	f.printName();
+	//f.alertName();
+	var tensquare=(function(x){return x*x}(10));
+	console.log(tensquare);
+</script>
+</html>

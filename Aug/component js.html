@@ -11,7 +11,23 @@
 	<div class="container">
 		1.模态弹窗
 		<button class="btn btn-primary btn-lg"data-toggle="modal"data-target="#mymodal">Launch demo modal</button>
-		<div id="mymodal"></div>
+		<div id="mymodal show">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close"data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">modal标题</h4>
+					</div>
+					<div class="modal-body">
+						<p>这里是弹窗的具体内容</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button class="btn btn-primary">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		2.警告框组件
 		<div class="alert">
 			<button class="close"data-dismiss="alert">&times;</button>

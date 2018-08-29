@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM query</title>
+</head>
+<body>
+	
+</body>
+<script>
+//构造函数
+	function Elem(id){
+		this.elem=document.getElementById(id);
+	}
+	Elem.prototype.html=function(val){
+		var elem =this.elem;
+		if(val){
+			elem.innerHTML=val;
+			return this;//链式操作
+		}else{
+			return elem.innerHTML;
+		}
+	};
+var div1=new Elem('div1');
+</script>
+</html>
