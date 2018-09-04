@@ -8,6 +8,7 @@
 	
 </body>
 <script>
+//nested嵌套作用域 带有var  局部变量不会改全局变量的值
 	var scope="global scope";
 	function checkscope(){
 		var scope="local scope";
@@ -19,5 +20,13 @@
 	}
 	var result=checkscope();
 	console.log(result);
+//函数作用局声明提前
+//函数内局部变量,变量声明提前至顶部,变量初始化留在原来的的位置
+	var scope="global";
+	function f(){
+		console.log(scope);//undefined;
+		var scope="local";
+		console.log(scope);
+	}
 </script>
 </html>

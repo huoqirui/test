@@ -105,7 +105,7 @@
 */
 //为上述例子实现一个简单的函数
 //使用函数直接量,定义在对象直接量中
-	var operators={
+	var operators={//运算符对象
 		add:function(x,y){return x+y},
 		subtract:function(x,y){return x-y},
 		multiply:function(x,y){return x*y},
@@ -126,5 +126,14 @@
 	console.log(j);
 	var k=operate2("pow",10,2);//调用预定义
 	console.log(k);
+//自定义函数属性,函数两个返回值不能一样,返回一个唯一整数的函数
+//初始化函数对象的计数器属性
+//因为函数声明提前了,因此这里可以在函数声明之前给它的成员赋值
+	uniqueInteger.counter=0;
+//每次调用这个函数都会返回一个不同的整数
+//使用一个属性来记住下一次将要返回的值
+	function uniqueInteger(){
+		return uniqueInteger.counter++;
+	}
 </script>
 </html>

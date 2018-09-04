@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scope</title>
+</head>
+<body>
+	
+</body>
+<script>
+//执行上下文
+	console.log(a);
+	var a=100;
+	fn('zhangsan');
+	function fn(name){
+		age=20;
+		console.log(name,age);
+		var age;
+	}
+//作用域
+// 	var i,a;//声明变量i a
+// 	for(i=0;i<10;i++){//循环
+// 		a=document.createElement('a');//创建10个标签a
+// 		a.innerHTML=i+'<br>';
+// 		a.addEventListener('click',function(e){
+// 			e.preventDefault();
+// 			alert(i);
+// 		})
+// 		document.body.appendChild(a);
+// 	}
+// //
+	var i;
+	for(i=0;i<10;i++){
+		(function(i){
+			var a=document.createElement('a');
+			a.innerHTML=i+'<br>';
+			a.addEventListener('click',function(e){
+				e.preventDefault();
+				alert(i);
+			})
+			document.body.appendChild(a);
+		})(i);
+	}
+</script>
+</html>

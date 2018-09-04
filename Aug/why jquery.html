@@ -42,5 +42,16 @@
 	//f.alertName();
 	var tensquare=(function(x){return x*x}(10));
 	console.log(tensquare);
+	var o={//对象o
+		m:function(){//对象中的方法m()
+			var self=this;//将this值保存在一个变量中
+			console.log(this==o);//true对象o调用这个m()
+			f();//调用辅助函数f()
+			function f(){//定义一个嵌套函数f()
+				console.log(this===o);//false嵌套函数调用上下文this不是对象o,是window
+				console.log(self===o);//true嵌套函数可以访问外部函数m()的参数和变量.
+			}
+		}
+	};
 </script>
 </html>

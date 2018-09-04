@@ -21,6 +21,11 @@
 			return elem.innerHTML;
 		}
 	};
+	Elem.prototype.on=function(type,fn){
+		var elem=this.elem;
+		elem.addEventListener(type,fn)
+	};
 var div1=new Elem('div1');
+console.log(div1.html());
 </script>
 </html>
