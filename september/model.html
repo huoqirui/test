@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>model</title>
+</head>
+<body>
+	
+</body>
+<script>
+/*1.//作用域:变量和函数存储的地方,规定访问变量和函数的规则,协助引擎执行代码,仓库
+	function foo(a){//形参被赋值为2
+		console.log(a);//console内置对象存在作用域中
+	}
+	foo(2);//函数执行,向作用域选文fof是什么,作用域通过编译器知道了foo是函数
+*/
+/*2.//2.RHS
+	function foo(a){
+		console.log(a+b);
+		var b=a;
+	}
+	
+	foo(2);
+*/
+/*3.//函数作用域 私有化变量和函数,好处可以不被使用,放在全局作用域很危险
+	function doSomething(a){
+		function doSomethingElse(a){//私有化
+			return a-1;
+		}
+		var b;//私有化
+		b=2+doSomethingElse(a*2);
+		console.log(b*3);
+	}
+	doSomething(2);//15
+*/
+/*4.变量冲突的危害 i一直是3 无线死循环
+	function foo(){
+	function bar(a){
+		var i=3;//不带var 则修改foo作用域中的i造成死循环
+		console.log(a+i);
+	}
+	for(var i=0;i<10;i++){//拆开一步一步执行,先var =0;再判条件,再循环体,再i++,循环体执行完毕后,变量变成最后的值10
+		bar(i*2);
+	}
+}
+foo();//
+*/
+/*5.//立即执行函数(function(){})()
+	var a=2;
+	(function foo(){
+		var a=3;
+		console.log(a);
+	})();//3
+	console.log(a);//2
+*/
+/*6.//立即执行函数表达式进阶用法 立即调用并传参
+	var a=2;
+	(function IIFE(global){
+		var a=3;
+		console.log(a);//3局部变量
+		console.log(global.a);//2全局window.a指向window对象
+	})(window);
+	console.log(a);//全局作用域变量a  2
+*/
+/*7.避免在块内部声明函数
+	foo();//TypeError:foo  is not a function
+	var a=true;
+	if(a){
+		function foo(){console.log('a')};
+	}else{
+		function foo(){console.log('b')};
+	}
+*/
+/*8//基于词法作用域的查询规则,
+	function foo(){
+		var a=2;
+		function bar(){
+			console.log(a);
+		}
+		bar();
+	}
+	foo();
+*/
+/*9.//观察函数闭包,函数在别处被调用时都会观察到闭包
+	function foo(){
+		var a=2;
+		function bar(){
+			console.log(a);
+		}
+		return bar;//作为foo函数调用返回值
+	}
+	var baz=foo();//返回函数
+	baz();//执行bar函数通过不同的标识符引用调用了内部的函数bar( )
+*/
+/*10.闭包,在别处调用函数,函数仍保持对原有词法作用域的引用,这就是闭包
+	function foo(){
+		var a=2;
+		function baz(){
+			console.log(a);
+		}
+		bar(baz);//baz当做参数传进去
+	}
+	function bar(fn){
+		fn();
+	}
+	foo();
+*/
+/*11.
+	function wait(message){
+		setTimeout(function timer(){console.log(message)},1000)
+	}
+	wait("Hello,closure!");
+*/
+for(var i=1;i<=5;i++){
+	setTimeout(function timer(){console.log(i)},i*1000)
+}
+</script>
+</html>
