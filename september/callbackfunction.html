@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>callbackfunction</title>
+</head>
+<body>
+	
+</body>
+<script>
+/*//1.函数名是变量,打印结果是字符串
+	function say(value){
+		console.log(value);
+	}
+	console.log(say);
+	console.log(say('hi js'));//hi js undefined 函数调用结果,函数返回值
+*/
+/*2.//实现回调函数的2中形式匿名/具名函数
+	function say(value){
+		console.log(value);
+	}
+	function execute(someFunction,value){
+		someFunction(value);
+	}
+	execute(say,'hi js.');
+	function execute(someFunction,value){
+		someFunction(value);
+	}
+	execute(function(value){console.log(value);},'hi js.')
+*/
+/*3.回到函数有名字,同等级作为参数
+	var allUserData=[];
+	function logStuff(userData){
+		if(typeof userData==="string"){
+			console.log(userData);
+		}else if(typeof userData==="object"){
+			for(var item in userData){
+				console.log(item +":"+userData[item]);
+			}
+		}
+	}
+	function getInput(options,callback){
+		allUserData.push(options);
+		callback(options);
+	}
+	getInput({name:"rich",speciality:"javascript"},logStuff);
+	console.log(allUserData);
+*/
+/*4.解决回调函数中this指向问题
+	var clientData={//定义用户数据对象
+		id:094545,
+		fullName:"Not Set",
+		setUserName:function (firstName,lastName){
+			this.fullName=firstName+" "+lastName;
+		}
+	}
+	function getUserInput(firstName,lastName,callback,callbackobj){//用户输入函数是一个全局函数
+		callback.apply(callbackobj,[firstName,lastName]);//全局函数中this指向window对象
+	}
+	getUserInput('Barack','obama',clientData.setUserName,clientData);
+	console.log(clientData.fullName);
+	console.log(window.fullName);
+*/
+/*5.回调函数主函数先执行完再回调回调函数
+	function genericPomeMaker(name,gender){
+		console.log(name+"is finer than fine wine.")
+		console.log("Altruistic and noble for the modern time.");
+		console.log("Always admirably adorned with the lastest style.")
+		console.log("A"+gender+"of unfortunate tragedies who still manages a perptual smile")
+	}
+	function getUserInput(firstName,lastName,gender,callback){
+		var fullName=firstName+""+lastName;
+		if(typeof callback==="function"){
+			callback(fullName,gender);
+		}
+	}
+	getUserInput("Michael","Fassbender","Man",genericPomeMaker);
+*/
+/*6.回调函数
+	function a(callback){
+		callback();
+		console.log('我是主函数');
+	}
+	function b(){
+		setTimeout("console.log('我是回调函数')",3000)
+	}
+	a(b);//我是主函数,我是回调函数,先执行主函数再执行回调函数
+*/
+/*7.函数方法,call() apply()任何函数可以作为任何对象的方法调用,参数this
+	function sum(num1,num2){
+		return num1+num2;
+	}
+	function callSum1(num1,num2){
+		return sum.apply(this,arguments);
+	}
+	function callSum2(num1,num2){
+		return sum.apply(this,[num1,num2]);
+	}
+	console.log(callSum1(10,10));
+	console.log(callSum2(10,10));
+	function sum(num1,num2){
+		return num1+num2;
+	}
+	function callSum(num1,num2){
+		return sum.call(this,num1,num2);
+	}
+	console.log(callSum(10,10));
+*/
+	window.color='red';
+	var o={color:'blue'};
+	function sayColor(){
+		console.log(this.color)
+	}
+	sayColor();
+	sayColor.call(this);
+	sayColor.call(window);
+	sayColor.call(o);
+</script>
+</html>
