@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>responsive</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/jquery-1.12.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<style>
+.tips1{
+	width: 30px;
+	height: 300px;
+	right: 0;
+	background-color: #000;
+}
+.tips2{
+	width: 30px;
+	height: 100px;
+	background-color: blue;
+	right: 0;
+}
+#login{
+	width: 400px;
+}
+.iconFork{
+	background: url(img/fork.jpg) no-repeat;
+	background-size:cover ;
+	width: 12px;
+	height:12px;
+}
+	</style>
+</head>
+<body style="height:2000px">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="tips1 affix visible-lg-block"></div>
+			<div class="tips2 affix hidden-lg"></div>
+		</div>		
+		<div>aaaaaaaaaaaaaaaa</div>
+	</div>
+	<button type="button" class="btn btn-default" aria-label="Left Align">
+		<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+	</button>
+	<div class="container">
+		<input type="button" value="默认样式">
+		<input type="button" value="首选项"class="btn btn-active">
+		<input type="button" value="成功"class="btn btn-success">
+		<input type="button" value="首选项"class="btn btn-info">
+		<input type="button" value="首选项"class="btn btn-warning">
+		<input type="button" value="首选项"class="btn btn-danger">
+		<p class="bg-active">默认段落</p>
+		<p class="bg-success">成功段落</p>
+		<p class="bg-info">信息段落</p>
+		<p class="bg-warning">信息段落</p>
+		<p class="bg-danger">信息段落</p>
+		<span class="text-danger">危险</span>
+		<a href="javascript:;"class="">链接1</a>
+		<a href="javascript:;"class="btn btn-info">链接2</a>
+		<a href="javascript;:"class="text-danger">链接3</a>
+		<hr>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h4>我是面板的标题</h4>
+			</div>
+			<div class="panel-body">
+				我是面板主题
+			</div>
+		</div>
+		<hr>
+		<div class="panel panel-primary"id="login">
+			<div class="panel-heading">
+				Login
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label>用户名: </label><input type="text"class='form-control'>
+					<div class="alert alert-warning">不能为空!!</div>
+					<label>密码: </label><input type="password" name="" id="" class='form-control'>
+					<a href="javascript;:"class="warning">忘记密码!</a>
+				</div>	
+				<input type="button" value="登录"class="btn btn-primary pull-right">
+				<button type="button" class="btn btn-link">（链接）Link</button>
+				<button type="button" class="btn btn-default">（默认样式）Default</button>
+				<button class="btn btn-primary btn-lg">大按钮</button>
+			</div>
+		</div>
+		<hr>
+		<input type="text" class="form-control">
+		<input type="text" class="form-control input-lg">
+		<input type="text" class='form-control input-xs'>
+		<input type="button" value="激活按下" class="btn btn-active">
+		<input type="button" value="默认状态"class="btn btn-default">
+		<hr>
+
+		<input type="button" value="默认样式"class="btn btn-default">
+		<input type="button" value="首选项"class="btn btn-active">
+		<input type="button" value="成功"class="btn btn-success">
+		<div class="btn-group">
+			<input type="button" value="默认样式"class="btn btn-default">
+			<input type="button" value="首选项"class="btn btn-active">
+			<input type="button" value="成功"class="btn btn-success">
+		</div>
+		<div class="btn-group btn-group-justified">
+			<a href="javascript:;"class="btn btn-primary">按钮1</a>
+			<a href="javascript:;"class="btn btn-primary">按钮2</a>
+			<a href="javascript:;"class="btn btn-primary">按钮3</a>
+		</div>
+		<div class="btn-group btn-group-justified">
+			<input type="button" value="默认样式"class="btn btn-info">
+			<input type="button" value="首选项"class="btn btn-primary">
+			<input type="button" value="成功"class="btn btn-success">
+		</div>
+		<div class="btn-group btn-group-justified">
+			<div class="btn-group">
+				<button class="btn btn-danger">按钮btn1</button>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-warning">按钮btn1</button>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-danger">按钮btn1</button>
+			</div>
+
+		</div>
+		<hr>
+		<div class="btn-group btn-group-vertical">
+			<div class="btn-group">
+				<input type="button" value="按钮" class="btn btn-primary">
+			</div>
+			<div class="btn-group">
+				<input type="button" value="按钮" class="btn btn-primary">
+			</div>
+			<div class="btn-group">
+				<input type="button" value="按钮" class="btn btn-primary">
+			</div>
+		</div>
+		<hr>
+		<a href="javascript"class="btn btn-primary">a按钮<span class="caret"></span></a>
+		<button class="btn btn-info">button按钮<span class="caret"></span></button>
+		<input type="button" value="按钮"class="btn btn-success"><span class="caret"></span>
+		<hr>
+		两个按钮组成一个组来形成大的按钮
+		<div class="btn-group">
+			<a href="javascript:;" class="btn btn-info">按钮</a>
+			<a href="javascript:;" class="btn btn-info"><span class="caret"></span></a>
+		</div>
+		<hr>
+		<div class="btn-group">
+			<button class="btn btn-danger">按钮button</button>
+			<button class="btn btn-danger"><span class="caret"></span></button>
+		</div>
+		<hr>
+		箭头向上父级加dropup
+		<div class="btn-group dropup">
+			<button class="btn btn-danger">按钮button</button>
+			<button class="btn btn-danger"><span class="caret"></span></button>
+		</div>
+		<hr>
+		eg:
+		<div class="btn-group">
+			<button class="btn btn-default active"><span class="glyphicon glyphicon-eye-open">Watch <span class="caret"></span></span></button>
+			<button class="btn btn-default">1064</button>
+		</div>
+		<div class="btn-group">
+			<button class="btn btn-default active"><span class="glyphicon glyphicon-star"></span>Unstar</button>
+			<button class="btn btn-default">36.928</button>
+		</div>
+		<div class="btn-group">
+			<button class="btn btn-default active"><span class="glyphicon iconFork"></span>Fork</button>
+			<button class="btn btn-default">9680</button>
+		</div>
+		<hr>
+		下拉菜单
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown">
+				Dropdown
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li>
+					<a href="#">Action</a>
+				</li>
+				<li>
+					<a href="#">Another action</a>
+				</li>
+				<li>
+					<a href="#">Something else here</a>
+				</li>
+				<li role="separator" class="divider"></li>
+				<li>
+					<a href="#">Separated link</a>
+				</li>
+			</ul>
+		</div>
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle"arai-haspopup="true"role="menu"data-toggle="dropdown">下拉菜单<span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">编辑</a></li>
+				<li class="divider"><a href="#">编辑</a></li>
+				<li><a href="#">编辑</a></li>
+			</ul>
+		</div>
+		<div role="checkbox"aria-label="checked"></div>
+		<hr>
+		下拉菜单对齐
+		<div class="row">
+			<div class="col-md-4">
+				<div class="dropdown open">
+					<button class="btn btn-default dropdown-toggle"data-toggle="dropdown">下拉菜单触发器<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="#">菜单1</a></li>
+						<li><a href="#">菜单2</a></li>
+						<li class="divider"></li>
+						<li><a href="#">菜单3</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="dropdown dropup pull-right">
+					<button class="btn btn-default dropdown-toggle"data-toggle="dropdown">下拉菜单触发器<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="#">菜单1</a></li>
+						<li><a href="#">菜单2</a></li>
+						<li class="divider"></li>
+						<li><a href="#">菜单3</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle"data-toggle="dropdown">下拉菜单触发器<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="#">菜单1</a></li>
+						<li><a href="#">菜单2</a></li>
+						<li class="divider"></li>
+						<li><a href="#">菜单3</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
