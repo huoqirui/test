@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animation</title>
+	<style>
+@keyframes changecolor{
+	0%{
+		background: red;
+	}
+	100%{
+		background: green;
+	}
+}
+div{
+	width: 100px;
+	height: 100px;
+	background: red;
+	color:#fff;
+	animation:changecolor 5s;
+}
+div:hover{
+	animation:wobble 5s ease .1s;
+}
+	</style>
+</head>
+<body>
+	<div>鼠标放在身上</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery</title>
+	<script src="js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+	<button>元素绑定事件,弹出回调中的this</button>
+</body>
+<script>
+	$('button:eq(0)').mousedown(function(){
+		console.log(this);
+	})
+</script>
+</html>
