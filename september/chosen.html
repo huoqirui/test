@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chosen</title>
+	<link href="https://cdn.bootcss.com/chosen/1.8.5/chosen.min.css" rel="stylesheet">
+	<script src="bootstrap/js/jquery-1.12.4.min.js"></script>
+	<script src="https://cdn.bootcss.com/chosen/1.8.5/chosen.jquery.min.js"></script>
+</head>
+<body>
+	<select name="demo" id="demo"style="width:300px">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+	</select>
+	<hr>
+	<select name="demo2" id="demo2"multiple data-placeholer="请选择">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+	</select>
+</body>
+<script>
+	$(function(){
+		$('#demo').chosen();
+		$('#demo2').chosen({
+			width:'50%',
+		})
+	})
+</script>
+</html>
