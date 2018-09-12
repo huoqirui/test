@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mouseenter dropdown menu</title>
+	<link rel="stylesheet" href="../bs/css/bootstrap.css">
+	<script src="bootstrap/js/jquery-1.12.4.min.js"></script>
+	<script src="../bs/js/bootstrap.js"></script>
+	<style>
+.tab-content{
+	border: 1px solid #ccc;
+	border-top: none;
+	padding: 50px;
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle">
+						plugins
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="javascript:;">Active</a>
+						</li>
+						<li>
+							<a href="javascript:;">Active</a>
+						</li>
+						<li>
+							<a href="javascript:;">Active</a>
+						</li>
+						<li>
+							<a href="javascript:;">Active</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						plugins
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="javascript:;">Active</a>
+						</li>
+						<li>
+							<a href="javascript:;">Active</a>
+						</li>
+						<li>
+							<a href="javascript:;">Active</a>
+						</li>
+						<li>
+							<a href="javascript:;">Active</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						plugins
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="javascript:;">Active</a>
+						</li>
+						<li>
+							<a href="javascript:;">Active</a>
+						</li>
+						<li>
+							<a href="javascript:;">Active</a>
+						</li>
+						<li>
+							<a href="javascript:;">Active</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<ul class="nav nav-tabs nav-justified">
+			<li class="active"><a href="javascript:;">one</a></li>
+			<li><a href="javascript:;">two</a></li>
+			<li><a href="javascript:;">three</a></li>
+			<li><a href="javascript:;">four</a></li>
+		</ul>
+		<hr>
+		<ul class="nav nav-tabs nav-tabs-justified ">
+			<li class="active"><a href="javascript:;">one</a></li>
+			<li><a href="javascript:;">two</a></li>
+			<li><a href="javascript:;">three</a></li>
+			<li><a href="javascript:;">four</a></li>
+		</ul>
+		<hr>
+		<ul class="nav nav-pills nav-stacked">
+			<li class="active"><a href="javascript:;"data-toggle="tab">one</a></li>
+			<li><a href="javascript:;">two</a></li>
+			<li><a href="javascript:;"data-toggle="tab">three</a></li>
+			<li><a href="javascript:;"data-toggle="tab">four</a></li>
+		</ul>
+		<hr>
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#a"data-toggle="tab">one</a></li>
+			<li><a href="#b"data-toggle="tab">two</a></li>
+			<li><a href="#c"data-toggle="tab">three</a></li>
+			<li class="dropdown">
+				<a href="javascript:;"data-toggle="dropdown">four<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="javascript:;">five</a></li>
+					<li><a href="javascript:;">six</a></li>
+				</ul>
+			</li>
+		</ul>
+		<ul class="tab-content">
+			<li id="a" class="tab-pane fade in active"><a href="javascript:;">aaaaaa</a></li>
+			<li id="b" class="tab-pane fade"><a href="javascript:;">bbbbbb</a></li>
+			<li id="c" class="tab-pane fade"><a href="javascript:;">ccccccc</a></li>
+		</ul>
+		<hr>
+		<ul class="nav nav-tabs"id="mytabs">
+			<li class="active"><a href="#a1"data-toggle="tab">one</a></li>
+			<li><a href="#b1"data-toggle="tab">two</a></li>
+			<li><a href="#c1"data-toggle="tab">three</a></li>
+			<li class="dropdown">
+				<a href="javascript:;"data-toggle="dropdown">four<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#c4"data-toggle="tab">five</a></li>
+					<li><a href="#d4"data-toggle="tab">six</a></li>
+				</ul>
+			</li>
+		</ul>
+		<ul class="tab-content">
+			<li id="a1" class="tab-pane fade in active"><a href="javascript:;">aaaaaa</a></li>
+			<li id="b1" class="tab-pane fade"><a href="javascript:;">bbbbbb</a></li>
+			<li id="c1" class="tab-pane fade"><a href="javascript:;">ccccccc</a></li>
+			<li id="c4" class="tab-pane fade"><a href="javascript:;">ddddddd</a></li>
+			<li id="d4" class="tab-pane fade"><a href="javascript:;">fffffff</a></li>
+		</ul>
+		<hr>
+		 <nav class="navbar navbar-default">
+		 	<ul class="nav navbar-nav">
+		 		<li><a href="javascript:;">首页</a></li>
+		 		<li><a href="javascript:;">联系方式</a></li>
+		 		<li><a href="javascript:;">公司简介</a></li>
+		 	</ul>
+		 </nav>
+		 <hr>
+		 <nav class="navbar navbar-default navbar-static-top">
+		 	<ul class="nav navbar-nav">
+		 		<li><a href="javascript:;">home</a></li>
+		 		<li><a href="javascript:;">contact</a></li>
+		 		<li><a href="javascript:;">公司简介</a></li>
+		 	</ul>
+		 </nav>
+	</div>
+	<hr>
+		 <nav class="navbar navbar-inverse navbar-fixed-top">
+		 	<div class="container">
+		 		<ul class="nav navbar-nav">
+		 			<li>
+		 				<a href="javascript:;">首页</a>
+		 			</li>
+		 			<li>
+		 				<a href="javascript:;">联系方式</a>
+		 			</li>
+		 			<li>
+		 				<a href="javascript:;">公司简介</a>
+		 			</li>
+		 		</ul>
+		 	</div>
+
+		 </nav>
+		 <hr>
+		 <nav class="navbar navbar-default">
+		 	<div class="container-fluid">
+		 		<ul class="nav navbar-nav">
+		 			<li><a href="javascript:;">xujia</a></li>
+		 			<li><a href="javascript:;">liurui</a></li>
+		 			<li><a href="javascript:;">laoqi</a></li>
+		 		</ul>
+		 	</div>
+		 </nav>
+		 <hr>
+		 <nav class="navbar navbar-default">
+		 	<div class="container">
+		 		<div class="navbar-header">
+		 			<a href="javascript:;" class="navbar-brand">
+		 				<img src="bootstrap/img/fork.jpg" height="20" width="20" >
+		 			</a>
+		 		</div>		 		
+
+		 		<ul class="nav navbar-nav">
+		 			<li>
+		 				<a href="javascript:;">xujia</a>
+		 			</li>
+		 			<li>
+		 				<a href="javascript:;">liurui</a>
+		 			</li>
+		 			<li>
+		 				<a href="javascript:;">laoqi</a>
+		 			</li>
+		 		</ul>
+		 		<form action="#" class="navbar-form navbar-left">
+		 			<input type="text" class="form-control navbar-left">
+		 			<input type="submit" value="搜索"class="btn btn-primary">
+		 		</form>
+		 		<button class="btn btn-default navbar-btn ">搜索</button>
+		 		<ul class="nav navbar-nav navbar-right">
+		 			<li>
+		 				<a href="javascript:;">登录</a>
+		 			</li>
+		 			<li>
+		 				<a href="javascript:;">注册</a>
+		 			</li>		 			
+		 		</ul>
+		 	</div>
+		 </nav>
+		 <hr>
+		 输入组
+		 <form>
+		 	<div class="form-group">
+		 		<label for="exampleInputEmail">Email address</label>
+		 		<input type="email" class="form-control"placeholder="emial"id="exampleInputEmail">
+		 	</div>
+		 	<div class="form-group">
+		 		<label for="exampleInputPassword1">Password</label>
+		 		<input type="password"class="form-control" id="exampleInputPassword1">
+		 	</div>
+		 	<div class="form-group">
+		 		<label for="exampleInputFile">File input</label>
+		 		<input type="file" class="form-control" id="exampleInputFile">
+		 	</div>
+		 	<div class="checkbox">
+		 		<label>
+		 			<input type="checkbox">check me out
+		 		</label>
+		 	</div>
+		 </form>
+		 <hr>
+		 <nav class="navbar navbar-default navbar-fixed-top">
+		 	<div class="container">
+		 		<div class="navbar-header">
+		 			<a href="javascript:;" class="navbar-brand">
+		 				<img src="bootstrap/img/fork.jpg" height="20" width="20" alt="">
+		 			</a>
+		 		</div>
+		 		<form class="navbar-form navbar-left">
+		 			<div class="input-group">
+		 				<input type="text"class="form-control">
+		 				<span class="input-group-addon glyphicon glyphicon-search"></span>
+		 			</div>
+		 		</form>
+		 		<ul class="nav navbar-nav">
+		 			<li><a href="javascript:;">首页</a></li>
+		 			<li><a href="javascript:;">话题</a></li>
+		 			<li><a href="javascript:;">发现</a></li>
+		 		</ul>
+		 	</div>
+		 </nav>
+		 <hr>
+		 导航下拉菜单
+		 <nav class="navbar navbar-default">
+		 	 <div class="container">
+		 	 	<ul class="nav navbar-nav">
+		 	 		<li><a href="javascript:;">官网</a></li>
+		 	 		<li class="dropdown">
+		 	 			<a href="javascript:;" data-toggle="dropdown">导航菜单<span class="caret"></span></a>
+		 	 			<ul class="dropdown-menu">
+		 	 				<li><a href="javascript:;">子菜单1</a></li>
+		 	 				<li><a href="javascript:;">子菜单2</a></li>
+		 	 				<li><a href="javascript:;">子菜单3</a></li>
+		 	 			</ul>
+		 	 		</li>
+		 	 	</ul>
+		 	 </div>
+		 </nav>
+		<hr>
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" data-toggle="collapse"data-target="#bs-example-navbar-collapse-1">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="javascript:;" class="navbar-brand">logo</a>
+				</div>
+				<div class="collapse navbar-collapse"id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="javascript:;">导航内容1</a>
+						</li>
+						<li>
+							<a href="javascript:;">导航内容2</a>
+						</li>
+						<li>
+							<a href="javascript:;">导航内容3</a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+		</nav>
+</body>
+<script>
+/*
+if(window.navigator.userAgent.toLowerCase().indexOf('mobile')==-1){
+	// $('.dropdown-toggle').on('mouseover',function(){
+	// 	console.log(1);
+	// })
+	var timer=null;
+	$('.dropdown-toggle').hover(function(){
+		$('.dropdown').addClass('open');
+	},function(){
+		setTimeout(function(){
+			$('.dropdown').removeClass('open');
+		},1000);//延迟隐藏		
+	});
+}
+	*/
+	//$('.dropdown-toggle').dropdown();
+	// $('.dropdown-toggle').dropdown('toggle');
+	//加if判断pc端移入显示
+	$('#mytabs a').mouseover(function(){
+		$(this).tab('show');
+	});
+</script>
+</html>
