@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>immediately</title>
+</head>
+<body>
+	
+</body>
+<script>
+/*
+	var a=2;
+	(function foo(){
+		var a=3;
+		console.log(a);
+	})();
+	console.log(a);
+*/
+/*
+	var a=2;
+	(function IIFE(def){
+		def(window);})(function def(global){
+			var a=3;console.log(a);console.log(global.a)});
+*/
+for(var i=1;i<=5;i++){
+	setTimeout(function timer(){
+		console.log(i);
+	},i*1000)
+}
+</script>
+</html>

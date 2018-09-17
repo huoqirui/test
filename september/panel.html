@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>panel</title>
+	<style>
+.panel{
+	margin-bottom: 20px;
+	border-color: #fff;
+	border: 1px solid transparent;
+	box-shadow:0px 1px 1px rgba(0,0,0,.05);
+}
+.panel-body{
+	padding: 15px;
+}
+.panel-heading{
+	padding: 10px 15px;
+	border-bottom: 1px solid transparent;
+	border-top-left-radius:3px;
+	border-top-right-radius:3px;
+}
+.panel-heading>.dropdown .dropdown-toggle{
+	color: inherit;
+}
+.panel-title{
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 16px;
+	color: inherit;
+}
+.panel-title >a{
+	color: inherit;
+}
+.panel-default{
+	border-color: #ddd;
+}
+.panel-default > .panel-heading{
+	color: #333;
+	background-color: #f5f5f5;
+	border-color: #ddd;
+}
+.panel-default> .panel-heading +.panel-collapse .panel-body{
+	border-top-color: #ddd;
+}
+.panel-default > .panel-footer + .panel-collapse .panel-body{
+	border-bottom-color: #ddd;
+}
+	</style>
+</head>
+<body>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="panel-title">
+				Panel heading
+			</div>
+		</div>
+		<div class="panel-collapse">
+			<div class="panel-body">
+				折叠区域内容
+			</div>
+		</div>
+		<div class="panel-body">Panel body</div>
+	</div>
+	<form action="#">
+		<div class="form-group">
+			<label for="inputEmail">Email address</label>
+			<input type="email">
+		</div>
+		<div class="form-group">
+			<label for="inputPassword">Password</label>
+			<input type="password">
+		</div>
+		<div class="form-group">
+			<label for="inputFile">File input</label>
+			<input type="file">
+			<p class="help-block">Example block-level help text</p>
+		</div>
+		<div class="checkbox">
+			<label>
+				<input type="checkbox">check me out
+			</label>
+		</div>
+		<button class="btn btn-default">Submit</button>
+	</form>
+</body>
+</html>
