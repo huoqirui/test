@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>setTimeout</title>
+</head>
+<body>
+	<script>
+	/*1.
+	// setTimeout内置工具函数
+	function setTimeout(fn,time){
+
+	 }
+	 */
+	/*2.
+	for(var i=1;i<=5;i++){
+		setTimeout(function timer(){console.log(i);},i*1000)
+	}
+	*/
+	//setTimeout(function(){console.log("hello world!");},5000)
+	/*3.
+	var timeoutID=setTimeout(function(){console.log("hello");},5000);
+	clearTimeout(timeoutID);
+	*/
+	/*3.
+	setInterval(function(){
+		console.log("world")
+	},10000)
+	*/
+	/*var num=0;
+	var max=10;
+	var intervalId=null;
+	function incrementNumber(){
+		num++;
+		if(num==max){
+			clearInterval(intervalId);
+			console.log("Done");
+		}
+	}
+	intervalId=setInterval(incrementNumber,1000);*/
+	/*var num=0;
+	var max=10;
+	function incrementNumber(){
+		num++;
+		if(num<max){
+			setTimeout(incrementNumber,1000)
+		}else{
+			console.log("Done");
+		}
+	}
+	setTimeout(incrementNumber,1000); */
+	</script>
+</body>
+</html>

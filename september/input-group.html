@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>input-group</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/js/jquery-1.12.4.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="input-group">
+		<span class="input-group-addon">@</span>
+		<inpu class="form-control"></inpu>
+	</div>
+	<div class="input-group">
+		<input type="text" class="form-control">
+		<span class="input-group-addon">@example.com</span>
+	</div>
+	<div class="input-group">
+		<span class="input-group-addon">$</span>
+		<input type="text" class="form-control">
+		<span class="input-group-addon">.00</span>
+	</div>
+	<label for="basic-url">Your vanity URL</label>
+	<div class="input-group">
+		<span class="input-group-addon">http://</span>
+		<input type="text" class="form-control"id="basic-url">
+	</div>
+	<div class="input-group">
+		<div class="input-group-btn">
+			<button class="btn btn-default">
+				<span class="glyphicon glyphicon-bold"></span>
+			</button>
+			<button class="btn btn-default">
+				<span class="glyphicon glyphicon-italic"></span>
+			</button>
+		</div>
+		<input type="text" class="form-control">
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="input-group">
+				<span class="input-group-addon">
+					<input type="checkbox">
+				</span>
+				<input type="text" class="form-control">
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="input-group">
+				<span class="input-group-addon">
+					<input type="radio" name="" id="">
+				</span>
+				<input type="text" class="form-control">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button class="btn btn-default">Go!</button>
+				</span>
+				<input type="text" class="form-control">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="input-group">
+				<div class="input-group-btn">
+					<button class="btn btn-default dropdown-toggle"data-toggle="dropdown">Active <span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="#">active</a></li>
+						<li><a href="#">another active</a></li>
+						<li><a href="#">something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Speraated link</a></li>
+					</ul>
+				</div>
+				<input type="text" class="form-control">
+			</div>
+		</div>
+	</div>
+	<nav>
+		<ul class="pagination">
+			<li><a href="#"><span>&laquo;</span></a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#"><span>&raquo;</span></a></li>
+		</ul>
+		<ul class="pagination">
+			<li><a href="#"><span>&laquo;</span></a></li>
+			<li class="active"><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#"><span>&raquo;</span></a></li>
+		</ul>
+	</nav>
+	<ul class="pager">
+		<li class="previous"><a href="#">Previous</a></li>
+		<li class="next"><a href="#">Next</a></li>
+	</ul>
+</body>
+</html>
