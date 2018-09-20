@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标悬浮显隐藏二级菜单</title>
+	<style>
+ul{
+	padding: 0;
+	margin: 0;
+	list-style:none;
+}
+a{
+	text-decoration: none;
+
+}
+.down-triangle{
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-top-color:#000;
+}
+.up-triangle{
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-bottom-color:#000;
+}
+li{
+	list-style: none;
+}
+/*正常下三角*/
+.main-menu:after{
+	content:'';
+	position: absolute;
+	/*display: block;
+	width: 0;
+	height: 0;*/
+	border: 10px solid transparent;
+	border-top-color:#000;
+	margin-top: 10px;
+	
+}
+.drop-menu .sonmenu{
+	position: absolute;
+	display: none;
+}
+/*悬浮上三角*/
+.drop-menu:hover .main-menu:after{
+	content:'';
+	position: absolute;
+	/*display: block;
+	width: 0;
+	height: 0;*/
+	border: 10px solid transparent;
+	border-bottom-color:#000;
+	margin-top: -5px;
+}
+/*悬浮实现显示子菜单*/
+.drop-menu:hover .sonmenu{
+	display: block;
+}
+.sonmenu a:hover{
+	background-color: red;
+}
+.trans{
+	padding: 10px 3px 1px;
+	margin-left: 6px;
+	border-left: 1px solid gray;
+}
+/*头部正常下三角*/
+.trigle{
+	display: inline-block;
+	border: 4px solid transparent;
+	border-top-color:#000;
+	vertical-align: -3px;
+}
+/*子菜单隐藏*/
+.down-sonmenu{
+	position: absolute;
+	display: none;
+}
+/*鼠标悬浮后主li*/
+.top-dropdownMenu:hover{
+	background-color: #fff;
+	padding: 0 6px 0 8px;
+}
+/*鼠标悬浮后主a*/
+.top-dropdownMenu:hover >a{	
+	text-decoration: underline;
+	color: red;
+}
+/*鼠标悬浮后主菜单后上三角*/
+.top-dropdownMenu:hover .trigle{
+	display: inline-block;
+	border: 4px solid transparent;
+	border-bottom-color:#000;
+	vertical-align: 3px;
+}
+/*鼠标悬浮后子菜单*/
+.top-dropdownMenu:hover ul{
+	background-color: #fff;
+	display: block;
+	margin-left: -8px;/*有斜左移*/
+}
+/*鼠标悬浮后子菜单li*/
+.top-dropdownMenu:hover .down-sonmenu li{
+	display: block;
+	text-align: center;
+}
+/*鼠标悬浮后子菜单里的a*/
+.down-sonmenu a:hover {
+	text-decoration: underline;
+	color: red;	
+}
+	</style>
+</head>
+<body>
+	<!-- 下三角上三角 -->
+	<div class="down-triangle"></div>
+	<div class="up-triangle"></div>
+	<!-- 悬浮出现二级菜单 -->
+	<li class="drop-menu">
+		<a href="#" class="main-menu">鼠标悬浮</a>
+		<div class="sonmenu">
+			<ul>
+				<li><a href="#">子菜单1</a></li>
+				<li><a href="#">子菜单2</a></li>
+				<li><a href="#">子菜单3</a></li>
+			</ul>
+		</div>
+	</li>
+	<!-- 短竖横线 -->
+	<s class="trans"></s>
+	<!-- 悬浮出现二级菜单 -->
+	<li class='top-dropdownMenu on'>
+		<a href="#">
+			我的酒仙 <i class="trigle"></i>
+		</a>
+		<ul class="down-sonmenu">
+			<li>
+				<a href="javascript:;">我的订单</a>
+			</li>
+			<li>
+				<a href="javascript:;">我的物流</a>
+			</li>
+			<li>
+				<a href="javascript:;">我的优惠券</a>
+			</li>
+		</ul>
+	</li>
+</body>
+</html>
