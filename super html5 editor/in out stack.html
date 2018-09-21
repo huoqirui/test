@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>in out stack</title>
+</head>
+<body>
+	
+</body>
+<script>
+/*1.
+	var color="blue";
+	function changeColor(){
+		var anotherColor="red";
+		function swapColors(){
+			var tempColor=anotherColor;
+			anotherColor=color;
+			color=tempColor;
+			console.log(tempColor);
+		}
+		swapColors();
+	}
+	changeColor();
+	console.log(color);
+*/
+/*2.执行上下文
+	function f1(){
+		var n=999;
+
+		function f2(){
+			debugger;
+			console.log(n);
+		}
+		return f2;
+	}
+	var result=f1();//返回结果肯定是函数名,函数调用创建执行上下文f1
+	result();//
+*/
+	var name="window";
+	var p={name:"Perter",getName:function(){
+		var self=this;
+		return function(){
+			
+			return self.name;
+		}
+	}};
+	var getName=p.getName();
+	var _name=getName();
+
+	console.log(_name);
+
+</script>
+</html>
