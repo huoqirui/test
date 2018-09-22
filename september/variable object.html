@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>variable object变量对象</title>
+</head>
+<body>
+	
+</body>
+<script>
+/*1.创建变量对象阶段函数名与变量名同名是留函数名
+	function foo(){
+		console.log('function foo');
+	}
+	var foo;
+	console.log(foo);
+*/
+/*2.变量对象创建规则
+	console.log(foo);//变量提升先执行未赋值的时候留函数名
+	function foo(){
+		console.log('function foo');
+	}
+	var foo=20;
+*/
+/*3.变量对象发生在执行上下文的创建阶段
+	function foo(){
+		console.log('function foo');
+	}
+	console.log(foo);
+	foo=20;
+*/
+/*4.
+	function test(){
+		console.log(a);
+		console.log(foo());
+		var a=1;
+		function foo(){
+			return 2;
+		}
+	}
+	test();
+	//创建阶段
+	testEc={
+		VO:{},
+		scopeChain:{}
+	}
+	VO={
+		arguments:{....},
+		foo:<foo reference>,
+		a:undefined
+	}
+	// 执行阶段
+	VO->AO//Active Object
+	AO={
+		argument:{....},
+		foo:<foo reference>,
+		a:1,
+		this:window
+	}
+*/
+/*5.执行上下文执行环境变量提升
+	function test(){
+		console.log(foo);
+		console.log(bar);
+		var foo="Hello";
+		console.log(foo);
+		var bar = function (){
+			return "World";
+		};
+		function foo(){
+			return "hello";
+		}
+	}
+	test();
+*/
+	var a=20;
+	function test(){
+		var b=a+10;
+		function innerTest(){
+			debugger;
+			var c=10;
+			return b+c;
+
+		}
+		return innerTest();
+	}
+	test();
+	console.log(test());
+</script>
+</html>
