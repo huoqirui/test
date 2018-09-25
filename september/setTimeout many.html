@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>setTimeout</title>
+</head>
+<body>
+	
+</body>
+<script>
+/*1.
+	var timer=setTimeout(function(){
+		console.log('一秒钟之后我被打印出来')
+	},1000)
+	console.log(timer);
+*/
+/*1.
+	var timer=setTimeout(function(){
+		console.log('setTimeout actions.');
+	},0)
+	console.log('other actions');//同步代码
+*/
+/*1
+	setTimeout(function(){
+		console.log(a);
+	},0)
+	var a=10;
+	console.log(b);
+	console.log(fn);
+	var b=20;
+	function fn(){
+		setTimeout(function(){
+			console.log('setTimeout 10ms.')
+		},10)
+	}
+	fn.toString=function(){
+		return 30;
+	}
+	console.log(fn);
+	setTimeout(function(){
+		console.log('setTimeout 20ms.')
+	},20)
+	fn();
+*/
+/*1
+	var a=10;
+	var obj={
+		a:20
+	};
+	function fn(){
+		this=obj;
+		console.log(this.a);
+	}
+	fn();
+	fn.call(obj);
+*/
+/*2
+	this.a2=20;//通过this绑定到全局对象
+	var a1=10;//通过声明到变量对此昂,
+	a3=30;//标识符隐式绑定到全局对象
+	console.log(a1);
+	console.log(a2);
+	console.log(a3);
+*/
+/*2
+	'use strict'
+	var a=20;
+	function fn(){
+		console.log(this.a);
+	}
+	fn();//20严格模式下就是undefined.a会报错
+*/
+	// 'use strict'
+	// var a =20;
+	// function fn(){
+	// 	function foo(){
+	// 		console.log(this.a);
+	// 	}
+	// 	foo();//非严格模式下,独立调用this执行undefined,会被自动指向全局对象window
+	// }
+	// fn();//非严格模式下是20,严格模式下是undefined报错
+	// var a=20;
+	// var obj={
+	// 	a:10,
+	// 	c:this.a+20,//全局作用域中window
+	// 	fn:function(){
+	// 		return this.a
+	// 	}
+	// };
+	// console.log(obj.c);//40
+	// console.log(obj.fn());//10函数在obj中被调用
+/*
+	'use strict'
+	var a=20;
+	function foo(){
+		var a=1;
+		var obj={
+			a:10,
+			c:this.a+20,
+			fn:function(){
+				return this.a;
+			}
+		}
+		return obj.c;
+	}
+	// console.log(foo());//报错
+	console.log(window.foo());//40
+*/
+/*
+	var a=20;
+	var foo={
+		a:10,
+		getA:function(){
+			return this.a;
+		}
+	}
+	console.log(foo.getA());//10
+	var test=foo.getA;
+	console.log(test());//20
+*/
+/*
+	var a=20;
+	function getA(){
+		return this.a;
+	}
+	var foo={
+		a:10,
+		getA:getA
+	};
+	console.log(foo.getA());//10
+*/
+	function foo(){
+		console.log(this.a);
+	}
+	function active(fn){
+		fn();//独立调用,真实调用者
+	}
+	var a=20;
+	var obj={
+		a:10,
+		getA:foo
+	}
+	active(obj.getA);//20
+</script>
+</html>

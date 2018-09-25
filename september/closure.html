@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>closure 闭包</title>
+</head>
+<body>
+	
+</body>
+<script>
+/*1.闭包由两部分构成执行上下文还有执行上下文中定义的函数以及调用函数
+	function foo(){
+		var a=20;
+		var b=30;
+		function bar(){
+			debugger;
+			return a+b;
+		}
+		return bar;
+	}
+	var bar=foo();//代码执行是一块一块的,不然这时bar()undefined()不合理
+	bar();
+*/
+/*2.
+	var fn=null;
+	function foo(){
+		var a=2;
+		function innerFoo(){
+			debugger;
+			console.log(a);
+		}
+		fn=innerFoo;
+	}
+	function bar(){
+		fn();
+	}
+	foo();//只是把函数名给了变量fn
+	bar();//闭包
+*/
+/*2.
+
+	var start=new Date();
+	var end=0;
+	setTimeout(function(){
+		console.log(new Date() - start);
+	},500)
+	while(new Date()-start <=1000){}
+*/
+	setTimeout(function(){
+		console.log('一秒钟之后我会被打印出来')
+	},1000)
+</script>
+</html>
