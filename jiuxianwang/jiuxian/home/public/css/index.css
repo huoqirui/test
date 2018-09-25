@@ -1,0 +1,171 @@
+body{
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif, 宋体;
+	font-size:12px;
+}
+ul{
+	padding: 0;
+	margin: 0;
+	list-style:none;
+}
+a{
+	text-decoration: none;
+	color:#999;
+}
+/*头部*/
+.topHeader{
+	height: 26px;
+	line-height: 26px;
+	background-color: #F2F2F2;
+	letter-spacing: -1em;
+}
+/*头部容器*/
+.topHeader-container,.midHeaderCon{
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+/*头部容器a字体颜色*/
+.topHeader-container a{
+	color: #999;
+}
+/*头部左侧*/
+.topHeader-left{
+	float: left;
+}
+/*头部左侧a*/
+.topHeader-left a{
+	/*background-color: red;*/
+	letter-spacing: normal;
+	margin-right: 6px;
+}
+/*头部右侧*/
+.topHeader-right{
+	float: right;
+}
+/*头部右侧li*/
+.topHeader-right li{
+	display: inline-block;
+	padding: 0 5px;
+
+}
+/*头部右侧a*/
+.topHeader-right a{
+	letter-spacing: normal;
+	padding: 0 6px 0 8px;/*内边距*/
+}
+/*右侧所有图片图标*/
+.topHeader-right span{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	overflow: hidden;
+	margin: 7px 5px 0 0;
+}
+/*头部正常下三角*/
+.trigle{
+	display: inline-block;
+	border: 4px solid transparent;
+	border-top-color:#000;
+	vertical-align: -3px;
+}
+/*子菜单隐藏*/
+.down-sonmenu{
+	position: absolute;
+	display: none;
+}
+/*鼠标悬浮后主li*/
+.top-dropdownMenu:hover{
+	background-color: #fff;
+	/*padding: 0 6px 0 8px;*/
+}
+/*鼠标悬浮后主a*/
+.top-dropdownMenu:hover >a{	
+	text-decoration: underline;
+	color: red;
+}
+/*鼠标悬浮后主菜单后上三角*/
+.top-dropdownMenu:hover .trigle{
+	display: inline-block;
+	border: 4px solid transparent;
+	border-bottom-color:#000;
+	vertical-align: 3px;
+}
+/*鼠标悬浮后子菜单*/
+.top-dropdownMenu:hover ul{
+	background-color: #fff;
+	display: block;
+	margin-left: -8px;/*有斜左移*/
+}
+/*鼠标悬浮后子菜单li*/
+.top-dropdownMenu:hover .down-sonmenu li{
+	display: block;
+	text-align: center;
+}
+/*鼠标悬浮后子菜单里的a*/
+.down-sonmenu a:hover {
+	text-decoration: underline;
+	color: red;	
+}
+.ceo a,.club a{
+	color: red;
+}
+/*背景图统一地址*/
+.publicIcon{
+	background: url(../img/public.png) no-repeat;
+}
+/*购物车*/
+.cart span{	
+	background-position: -18px 1px;
+}
+/*短横*/
+.trans{
+	margin-left: 10px;
+	border-left: 1px solid #ccc;
+}
+/*手机图标*/
+.mobile span{
+	background-position: -62px 0;
+}
+.mobile a{
+	padding: 2px 2px 0px 3px;
+	background-color: red;
+	color:#fff;
+}
+/*客户服务*/
+.cusService span{
+	background-position: -90px -265px;
+}
+.cusService li{
+	width: 72px;
+}
+/*客服热线*/
+.serPhone{
+	color: red;
+}
+/*头部焦点区*/
+.topFocus a{
+	display: block;
+	height: 90px;
+	background: url(../img/one.jpg) no-repeat top center;
+}
+/*中部标头*/
+.midHeader{
+	height: 125px;
+	background-color: red;
+}
+/*一行显示headerLogo,headerSearch,headerProtect*/
+.headerLogo,.headerSearch,.headerProtect,.headerLogo div,.hotWords li{
+	display: inline-block;
+	vertical-align:middle;
+}
+/*headerLogo下一行显示热词下li一行显示*/
+.headerLogo div,.hotWords li{
+	display: inline-block;
+}
+.midHeaderCon{
+	height: 125px;
+}
+..headerLogo img{
+	vertical-align: top;
+}

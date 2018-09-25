@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>酒仙网登录后台</title>
+	<style>
+#login{
+	width: 30%;
+	height: 200px;
+	position: absolute;
+	top: 0;bottom: 0;
+	left: 0;right: 0;
+	margin: auto;
+}
+.login-in{
+	text-align: center;
+}
+
+	</style>
+	<link rel="stylesheet" href="../public/bs/css/bootstrap.css">
+	<script src="../public/js/jquery-1.12.4.min.js"></script>
+	<script src="../public/bs/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="panel panel-primary "id="login">
+		<div class="panel-heading">酒仙网后台管理登录</div>
+		<div class="panel-body">
+			<form action="index.html"method="post">
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-user"></span>
+						</span>
+						<input type="text" class="form-control"placeholder="用户名"></div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-lock"></span>
+						</span>
+						<input type="text" class="form-control"placeholder="密码"></div>
+				</div>
+				<div class="form-group login-in">
+					<input type="submit"value="登录" class="btn btn-primary ">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
