@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery module closure</title>
+	<style>
+.constr{
+	padding:40px 0px 40px 0px;	
+	margin: 0 auto;
+	text-align:center;	
+}
+.inline-table{
+	display: inline-table;
+	width: 128px;
+	border: 1px solid #cad5eb;
+}
+.inline-table >p {
+	display:table-cell;
+}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+function foo(){
+	console.log(this.a);
+}
+function active(fn){
+	fn();
+}
+var a=20;
+var obj={
+	a:10,
+	getA:foo
+}
+active(obj.getA);
+</script>
+</html>
